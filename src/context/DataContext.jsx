@@ -18,5 +18,5 @@ export const DataProvider = ({ children }) => {
         <dataContext.Provider value={dadosContexto} >
             {children}
         </dataContext.Provider >
-    )
-}
+    );
+};
