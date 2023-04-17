@@ -34,6 +34,22 @@ export const FormCadFarmacia = () => {
         complemento: complemento
     }
 
+    //Valida Cep e faz requisição
+    const pesquisaCep = (formCep) => {
+        setCep(formCep);
+
+        if (formCep != "") {
+            let cepValido = /^[0-9]{8}$/;
+
+            if (cepValido.test(formCep)) {
+                console.log(cepValido.test(formCep))
+                fetch(`https://viacep.com.br/ws/${formCep}/json/`)
+                    .then((response) => response.json())
+                    .then((dados) => console.log(dados))
+            }
+        }
+    }
+
     const salvaFarmacia = () => {
         fetch("http://localhost:8080/farmacia", {
             method: "POST",
@@ -72,7 +88,7 @@ export const FormCadFarmacia = () => {
                 onChange={(event) => setCel(event.target.value)} />
             <label htmlFor="cep">CEP</label>
             <input type="number" name="cep" placeholder="Digite o CEP" max={99999999} value={cep} required
-                onChange={(event) => setCep(event.target.value)} />
+                onChange={(event) => { pesquisaCep(event.target.value) }} />
             <hr />
             <label htmlFor="endereco">Logradouro/Endereço</label>
             <input type="text" name="endereco" value={endereco} required
