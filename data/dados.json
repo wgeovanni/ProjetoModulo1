@@ -1,3 +1,52 @@
 {
-    "farmacia": []
+  "farmacia": [
+    {
+      "id": 1,
+      "razao": "Farmácia Lab Ltda.",
+      "cnpj": "01234567890123",
+      "nome": "FarmaLab",
+      "email": "contato@farmalab.com",
+      "telefone": 1234567890,
+      "celular": 12345678912,
+      "cep": 90620260,
+      "endereco": "Rua Machado de Assis",
+      "numero": 500,
+      "bairro": "Partenon",
+      "cidade": "Porto Alegre",
+      "estado": "RS",
+      "complemento": "Próximo à igreja"
+    },
+    {
+      "id": 2,
+      "razao": "Farmácia Lab2 Ltda.",
+      "cnpj": "12345678901234",
+      "nome": "FarmaLab Sul",
+      "email": "contato@farmalabsul.com",
+      "telefone": 5143525768,
+      "celular": 51998765432,
+      "cep": 90610285,
+      "endereco": "Avenida Ipiranga",
+      "numero": 1234,
+      "bairro": "Jardim Botânico",
+      "cidade": "Porto Alegre",
+      "estado": "RS",
+      "complemento": "Lado ímpar"
+    },
+    {
+      "id": 3,
+      "razao": "Farmácia Lab3 Ltda.",
+      "cnpj": "98765432109876",
+      "nome": "FarmaLab Norte",
+      "email": "contato@farmalabnorte.com",
+      "telefone": 1143525768,
+      "celular": 11987654321,
+      "cep": 89201017,
+      "endereco": "Rua Amandus May",
+      "numero": 100,
+      "bairro": "Centro",
+      "cidade": "Santa Catarina",
+      "estado": "SC",
+      "complemento": "Próximo à estação de metrô"
+    }
+  ]
 }
