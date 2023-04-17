@@ -2,9 +2,6 @@ import { useState, useEffect } from "react"
 
 export const FormCadFarmacia = () => {
 
-    //State para objeto farmácia
-    const [cadFarmacia, setCadFarmacia] = useState([]);
-
     //Variáveis para captura dos dados
     const [razao, setRazao] = useState("");
     const [cnpj, setCnpj] = useState("");
@@ -37,35 +34,52 @@ export const FormCadFarmacia = () => {
         complemento: complemento
     }
 
+    const salvaFarmacia = () => {
+        fetch("http://localhost:8080/farmacia", {
+            method: "POST",
+            body: JSON.stringify(farmacia),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+    }
+
+    const validaForm = () => {
+        event.preventDefault();
+        salvaFarmacia();
+        alert("Farmácia Salva com sucesso");
+    }
+
     return (
-        <form>
+        <form onSubmit={validaForm}>
             <label htmlFor="razao">Razão Social</label>
             <input type="text" name="razao" placeholder="Digite a razão social" required autoFocus
-                onChange={(event) => setRazao(event.target.value)} />
+                value={razao} onChange={(event) => setRazao(event.target.value)} />
             <label htmlFor="cnpj">CNPJ</label>
-            <input type="text" name="cnpj" placeholder="Digite o CNPJ" maxLength={16} required
+            <input type="text" name="cnpj" placeholder="Digite o CNPJ" maxLength={16} value={cnpj} required
                 onChange={(event) => setCnpj(event.target.value)} />
             <label htmlFor="nome">Nome Fantasia</label>
-            <input type="text" name="nome" placeholder="Digite o Nome Fantasia" required
+            <input type="text" name="nome" placeholder="Digite o Nome Fantasia" value={nome} required
                 onChange={(event) => setNome(event.target.value)} />
             <label htmlFor="email">E-mail</label>
-            <input type="email" name="email" placeholder="Digite o Email" required
+            <input type="email" name="email" placeholder="Digite o Email" value={email} required
                 onChange={(event) => setEmail(event.target.value)} />
             <label htmlFor="fone">Telefone</label>
-            <input type="tel" name="fone" placeholder="Digite o telefone" maxLength={10}
+            <input type="tel" name="fone" placeholder="Digite o telefone" maxLength={10} value={fone}
                 onChange={(event) => setFone(event.target.value)} />
             <label htmlFor="cel">Celular</label>
-            <input type="tel" name="cel" placeholder="Digite o Celular" maxLength={11} required
+            <input type="tel" name="cel" placeholder="Digite o Celular" maxLength={11} value={cel} required
                 onChange={(event) => setCel(event.target.value)} />
             <label htmlFor="cep">CEP</label>
-            <input type="number" name="cep" placeholder="Digite o CEP" maxLength={9} required />
+            <input type="number" name="cep" placeholder="Digite o CEP" max={99999999} value={cep} required
+                onChange={(event) => setCep(event.target.value)} />
             <hr />
             <label htmlFor="endereco">Logradouro/Endereço</label>
             <input type="text" name="endereco" value={endereco} required
                 onChange={(event) => setEndereco(event.target.value)} />
             <label htmlFor="numero">Número</label>
             <input type="number" name="numero" required
-                onChange={(event) => setNumero(event.target.value)} />
+                onChange={(event) => setNumero(event.target.value)} value={numero} />
             <label htmlFor="bairro">Bairro</label>
             <input type="text" name="bairro" value={bairro} required
                 onChange={(event) => setBairro(event.target.value)} />
@@ -77,7 +91,7 @@ export const FormCadFarmacia = () => {
                 onChange={(event) => setEstado(event.target.value)} />
             <label htmlFor="complemento">Complemento</label>
             <input type="text" name="complemento"
-                onChange={(event) => setComplemento(event.target.value)} />
+                onChange={(event) => setComplemento(event.target.value)} value={complemento} />
             <input type="submit" />
         </form>
     )
