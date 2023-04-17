@@ -34,19 +34,27 @@ export const FormCadFarmacia = () => {
         complemento: complemento
     }
 
+    //Insere dados da API ViaCep
+    const insereDados = (dados) => {
+        setEndereco(dados.logradouro);
+        setBairro(dados.bairro);
+        setCidade(dados.localidade);
+        setEstado(dados.uf);
+    }
+
     //Valida Cep e faz requisição
     const pesquisaCep = (formCep) => {
         setCep(formCep);
 
-        if (formCep != "") {
-            let cepValido = /^[0-9]{8}$/;
-
-            if (cepValido.test(formCep)) {
-                console.log(cepValido.test(formCep))
-                fetch(`https://viacep.com.br/ws/${formCep}/json/`)
-                    .then((response) => response.json())
-                    .then((dados) => console.log(dados))
-            }
+        if (formCep != "" && formCep.length == 8) {
+            fetch(`https://viacep.com.br/ws/${formCep}/json/`)
+                .then((response) => response.json())
+                .then((dados) => insereDados(dados))
+        } else {
+            setEndereco("");
+            setBairro("");
+            setCidade("");
+            setEstado("");
         }
     }
 
@@ -92,19 +100,19 @@ export const FormCadFarmacia = () => {
             <hr />
             <label htmlFor="endereco">Logradouro/Endereço</label>
             <input type="text" name="endereco" value={endereco} required
-                onChange={(event) => setEndereco(event.target.value)} />
+            />
             <label htmlFor="numero">Número</label>
             <input type="number" name="numero" required
                 onChange={(event) => setNumero(event.target.value)} value={numero} />
             <label htmlFor="bairro">Bairro</label>
             <input type="text" name="bairro" value={bairro} required
-                onChange={(event) => setBairro(event.target.value)} />
+            />
             <label htmlFor="cidade">Cidade</label>
             <input type="text" name="cidade" value={cidade} required
-                onChange={(event) => setCidade(event.target.value)} />
+            />
             <label htmlFor="estado">Estado</label>
             <input type="text" name="estado" value={estado} required
-                onChange={(event) => setEstado(event.target.value)} />
+            />
             <label htmlFor="complemento">Complemento</label>
             <input type="text" name="complemento"
                 onChange={(event) => setComplemento(event.target.value)} value={complemento} />
