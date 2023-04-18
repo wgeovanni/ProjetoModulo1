@@ -2,6 +2,7 @@ import { useState } from "react"
 
 export const FormCadMedicamentos = () => {
 
+    //Objeto medicamento
     const [medicamento, setMedicamento] = useState({
         nomeMed: "",
         nomeLab: "",
@@ -11,17 +12,33 @@ export const FormCadMedicamentos = () => {
         tipo: "",
     });
 
+    //Captura os dados
     const atualizaCampo = (campo, valor) => {
         const novoDado = { ...medicamento, [campo]: valor };
         setMedicamento(novoDado);
     }
+
+    //Envia para o arquivo JSON
+    const salvaMedicamento = () => {
+        fetch("http://localhost:8080/medicamento", {
+            method: "POST",
+            body: JSON.stringify(medicamento),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+    }
+
     const cadastraMed = () => {
         event.preventDefault();
-        console.log(medicamento);
+        salvaMedicamento()
+        alert("Medicamento cadastrado com sucesso!");
+        //Reseta formulário
+        const form = document.querySelector("form");
+        form.reset();
     }
 
     return (
-
 
         <form onSubmit={cadastraMed}>
             <label htmlFor="nomeMed">Nome do medicamento</label>
@@ -41,6 +58,7 @@ export const FormCadMedicamentos = () => {
                 onChange={(event) => atualizaCampo("preco", event.target.value)} />
             <label htmlFor="tipo">Tipo de Medicamento</label>
             <select name="tipo" id="tipo" required onChange={(evento) => atualizaCampo("tipo", evento.target.value)}>
+                <option>Selecione...</option>
                 <option value="Medicamento Controlado">Medicamento Controlado</option>
                 <option value="Medicamento Comum">Medicamento Comum</option>
             </select>

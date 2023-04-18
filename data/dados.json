@@ -1,7 +1,6 @@
 {
   "farmacia": [
     {
-      "id": 1,
       "razao": "Farmácia Lab Ltda.",
       "cnpj": "01234567890123",
       "nome": "FarmaLab",
@@ -14,10 +13,10 @@
       "bairro": "Partenon",
       "cidade": "Porto Alegre",
       "estado": "RS",
-      "complemento": "Próximo à igreja"
+      "complemento": "Próximo à igreja",
+      "id": 1
     },
     {
-      "id": 2,
       "razao": "Farmácia Lab2 Ltda.",
       "cnpj": "12345678901234",
       "nome": "FarmaLab Sul",
@@ -30,10 +29,10 @@
       "bairro": "Jardim Botânico",
       "cidade": "Porto Alegre",
       "estado": "RS",
-      "complemento": "Lado ímpar"
+      "complemento": "Lado ímpar",
+      "id": 2
     },
     {
-      "id": 3,
       "razao": "Farmácia Lab3 Ltda.",
       "cnpj": "98765432109876",
       "nome": "FarmaLab Norte",
@@ -46,7 +45,19 @@
       "bairro": "Centro",
       "cidade": "Santa Catarina",
       "estado": "SC",
-      "complemento": "Próximo à estação de metrô"
+      "complemento": "Próximo à estação de metrô",
+      "id": 3
+    }
+  ],
+  "medicamento": [
+    {
+      "nomeMed": "remedio",
+      "nomeLab": "labInc",
+      "dosagem": "10 Ml",
+      "descricao": "remedio para gripe",
+      "preco": "R$ 10.00",
+      "tipo": "Medicamento Comum",
+      "id": 1
     }
   ]
 }
