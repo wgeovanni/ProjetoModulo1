@@ -58,6 +58,24 @@
       "preco": "R$ 10.00",
       "tipo": "Medicamento Comum",
       "id": 1
+    },
+    {
+      "nomeMed": "remedio2",
+      "nomeLab": "labInc2",
+      "dosagem": "20 Ml",
+      "descricao": "remedio para dor de cabeça",
+      "preco": "R$ 15.00",
+      "tipo": "Medicamento Comum",
+      "id": 2
+    },
+    {
+      "nomeMed": "remedio3",
+      "nomeLab": "labInc3",
+      "dosagem": "30 Ml",
+      "descricao": "remedio para febre",
+      "preco": "R$ 20.00",
+      "tipo": "Medicamento Comum",
+      "id": 3
     }
   ]
 }

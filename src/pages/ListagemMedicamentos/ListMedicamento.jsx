@@ -3,7 +3,7 @@ import { MedicamentoGrid } from '../../components/MedicamentoGrid/MedicamentoGri
 export const ListMedicamento = () => {
     return (
         <section>
-            <h2>Lista de Medicamntos</h2>
+            <h2>Lista de Medicamentos</h2>
             <MedicamentoGrid />
         </section>
     )
