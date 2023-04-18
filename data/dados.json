@@ -53,16 +53,16 @@
     {
       "nomeMed": "remedio",
       "nomeLab": "labInc",
-      "dosagem": "10 Ml",
+      "dosagem": "10ml",
       "descricao": "remedio para gripe",
       "preco": "R$ 10.00",
-      "tipo": "Medicamento Comum",
+      "tipo": "Medicamento Controlado",
       "id": 1
     },
     {
       "nomeMed": "remedio2",
       "nomeLab": "labInc2",
-      "dosagem": "20 Ml",
+      "dosagem": "20ml",
       "descricao": "remedio para dor de cabeça",
       "preco": "R$ 15.00",
       "tipo": "Medicamento Comum",
@@ -71,10 +71,10 @@
     {
       "nomeMed": "remedio3",
       "nomeLab": "labInc3",
-      "dosagem": "30 Ml",
+      "dosagem": "30ml",
       "descricao": "remedio para febre",
       "preco": "R$ 20.00",
-      "tipo": "Medicamento Comum",
+      "tipo": "Medicamento Controlado",
       "id": 3
     }
   ]

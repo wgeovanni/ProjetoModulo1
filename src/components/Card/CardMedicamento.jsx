@@ -1,11 +1,44 @@
 export const CardMedicamento = ({ medicamento }) => {
+    console.log(medicamento)
 
     return (
-        <div className="container">
-            <img className="remedio" src="../../../src/assets/medicamento.png" alt="Caixa de remédio"
-                title="Caixa de remédio" />
-            <h3>{medicamento.nomeMed} {medicamento.dosagem}</h3>
-            <p>{medicamento.nomeLab}</p>
-        </div>
+        <div className="card text-center">
+            <img className="card-img-top" src="../../../src/assets/medicamento.png" alt="Caixa de remédio"
+                title="Caixa de remédio" data-bs-toggle="modal" data-bs-target="#modalInfo" />
+
+            {/* Modal */}
+            <div className="modal fade" tabIndex="-1" id="modalInfo">
+                <div className="modal-dialog">
+                    <div className="modal-content">
+
+                        {/* Cabeçalho do Modal */}
+                        <div className="modal-header">
+                            <h2 className="modal-title">{medicamento.nomeMed}</h2>
+                            <button className="btn-close" data-bs-dismiss="modal" aria-label="Fechar modal" />
+                        </div>
+
+                        {/* Corpo do Modal */}
+                        <div className="modal-body">
+                            <p>Nome do Laboratório: {medicamento.nomeLab}</p>
+                            <p>Dosagem: {medicamento.dosagem}</p>
+                            <p>Descrição{medicamento.descricao}</p>
+                            <p>Valor: R$ {medicamento.preco}</p>
+                            <p className={medicamento.tipo == "Medicamento comum" ? "" : "text-danger"}>Tipo de medicamento: {medicamento.tipo}</p>
+                        </div>
+
+                        {/* Footer do Modal */}
+                        <div className="modal-footer">
+                            <button type="button" className="btn btn-secondary text-center" data-bs-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Corpo do Card */}
+            <div className="card-body">
+                <h3 className="card-title">{medicamento.nomeMed} / {medicamento.dosagem}</h3>
+                <p className="card-text">{medicamento.nomeLab}</p>
+            </div>
+        </div >
     )
-};
+}

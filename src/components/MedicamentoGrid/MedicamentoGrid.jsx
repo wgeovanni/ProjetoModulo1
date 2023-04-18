@@ -10,13 +10,14 @@ export const MedicamentoGrid = () => {
         buscaMedicamento();
     }, [])
 
+
     return (
-        <section>
-            <div>
+        <section className='row'>
+            <div className="col-3 mb-2 mr-2">
                 {medicamento.map((medicamento) => {
                     return <CardMedicamento key={medicamento.nomeMed} medicamento={medicamento} />
                 })}
             </div>
-        </section>
+        </section >
     )
 };
