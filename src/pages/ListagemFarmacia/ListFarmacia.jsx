@@ -1,5 +1,10 @@
+import { FarmaciaGrid } from "../../components/FarmaciaGrid/FarmaciaGrid"
+
 export const ListFarmacia = () => {
     return (
-        <h1>ListaFarmacia</h1>
+        <section>
+            <h2 className="text-center mt-3">Lista de Farmácias</h2>
+            <FarmaciaGrid />
+        </section>
     )
 }
