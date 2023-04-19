@@ -13,12 +13,10 @@ export const MedicamentoGrid = () => {
 
     return (
         <section className='row'>
-
-
             {/* Gera um card de cada medicamento */}
             {medicamento.map((medicamento) => {
-                return (<div className="col-3 mb-2 mr-2">
-                    <CardMedicamento key={medicamento.nomeMed} medicamento={medicamento} />
+                return (<div className="col-3 mb-2 mr-2" key={medicamento.id}>
+                    <CardMedicamento medicamento={medicamento} />
                 </div>
                 )
             })}

@@ -1,5 +1,4 @@
 export const CardMedicamento = ({ medicamento }) => {
-    console.log(medicamento)
 
     return (
         <div className="card text-center">
