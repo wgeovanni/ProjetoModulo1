@@ -5,17 +5,27 @@ export const dataContext = createContext();
 export const DataProvider = ({ children }) => {
 
     const [farmacia, setFarmacia] = useState([]);
+    const [medicamento, setMedicamento] = useState([]);
 
-    useEffect(() => {
+    const buscaFarmacia = () => {
         fetch("http://localhost:8080/farmacia")
             .then((res) => res.json())
-            .then((farmacia) => setFarmacia(farmacia));
-    }, []);
+            .then((dados) => setFarmacia(dados));
+    }
 
-    const dadosContexto = { farmacia };
+    const buscaMedicamento = () => {
+        fetch("http://localhost:8080/medicamento")
+            .then((res) => res.json())
+            .then((dados) => setMedicamento(dados));
+    }
 
     return (
-        <dataContext.Provider value={dadosContexto} >
+        <dataContext.Provider value={{
+            farmacia,
+            medicamento,
+            buscaFarmacia,
+            buscaMedicamento
+        }}>
             {children}
         </dataContext.Provider >
     );
