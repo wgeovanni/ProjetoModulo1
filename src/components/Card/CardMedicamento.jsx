@@ -4,10 +4,10 @@ export const CardMedicamento = ({ medicamento }) => {
     return (
         <div className="card text-center">
             <img className="card-img-top" src="../../../src/assets/medicamento.png" alt="Caixa de remédio"
-                title="Caixa de remédio" data-bs-toggle="modal" data-bs-target="#modalInfo" />
+                title="Caixa de remédio" data-bs-toggle="modal" data-bs-target={`#${medicamento.id}`} />
 
             {/* Modal */}
-            <div className="modal fade" tabIndex="-1" id="modalInfo">
+            <div className="modal fade" tabIndex="-1" id={medicamento.id}>
                 <div className="modal-dialog">
                     <div className="modal-content">
 
@@ -23,7 +23,7 @@ export const CardMedicamento = ({ medicamento }) => {
                             <p>Dosagem: {medicamento.dosagem}</p>
                             <p>Descrição{medicamento.descricao}</p>
                             <p>Valor: R$ {medicamento.preco}</p>
-                            <p className={medicamento.tipo == "Medicamento comum" ? "" : "text-danger"}>Tipo de medicamento: {medicamento.tipo}</p>
+                            <p className={medicamento.tipo == "Medicamento Comum" ? "text-dark" : "text-danger"}>Tipo de medicamento: {medicamento.tipo}</p>
                         </div>
 
                         {/* Footer do Modal */}
