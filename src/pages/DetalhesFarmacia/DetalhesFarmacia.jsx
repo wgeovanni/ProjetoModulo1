@@ -1,12 +1,10 @@
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 export const DetalhesFarmacia = () => {
 
-    const location = useLocation();
+    const navigate = useNavigate();
+    const { state } = useLocation();
 
-    console.log(location.state.dado);
+    console.log(state)
 
-    return (
-        <p>teste</p>
-    )
 }

@@ -1,6 +1,5 @@
 import { Farmacia } from "../Card/CardFarmacia";
 import { useData } from "../../context/useData"
-import { useEffect } from "react";
 
 export const FarmaciaTable = () => {
 

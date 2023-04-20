@@ -12,7 +12,6 @@ export const FormCadFarmacia = () => {
     const [farmacia, setFarmacia] = useState({})
 
     useEffect(() => {
-        console.log(farmacia)
     }, [endereco, farmacia]);
 
     const atualizaCampo = (campo, valor) => {
@@ -61,7 +60,6 @@ export const FormCadFarmacia = () => {
 
     const validaForm = (e) => {
         e.preventDefault();
-        console.log(farmacia)
         salva("farmacia", farmacia);
         alert("Farmácia Salva com sucesso");
         //setFarmacia("");

@@ -1,33 +1,57 @@
 import { Link } from 'react-router-dom'
-import "./header.css";
 
 export const Header = () => {
     return (
         <header>
-            <nav className="menu">
-                <div className="logo">
-                    <img src="../../../src/assets/logo.png" className="logo" alt="Logo do sistema" width="200px" />
-                </div>
-                <div className="titulo">
-                    <h1>PharmaSystem</h1>
-                </div>
-                <div className="links">
-                    <div className="dropdown">
-                        <button className="dropdown-btn">Cadastro</button>
-                        <div className="dropdown-content">
-                            <Link to='/cadastrofarmacia'>Farmácias</Link>
-                            <Link to='/cadastromedicamento'>Medicamentos</Link>
-                        </div>
+            <nav>
+                <ul className="nav nav-tabs d-flex justify-content-between">
+                    <li className="nav-item">
+                        <Link to={'/'} className="navbar-brand">
+                            <img src="../../../src/assets/logo.png" alt="Logo do sistema" width="50"
+                                className="d-inline-block align-text-top" />
+                            LABPharmacy Inc.
+                        </Link>
+                    </li>
+                    <div className="d-flex justify-content-between">
+                        <li className="nav-item dropdown-center">
+                            <button className="btn btn-outline-info me-2 nav-button dropdown-toggle"
+                                type="button" data-bs-toggle="dropdown">Cadastro</button>
+                            <ul className="dropdown-menu">
+                                <li>
+                                    <Link to='/cadastrofarmacia' className="dropdown-item">Farmácias</Link>
+                                </li>
+                                <hr className="dropdown-divider" />
+                                <li>
+                                    <Link to='/cadastromedicamento' className="dropdown-item">Medicamentos</Link>
+                                </li>
+                            </ul>
+                        </li>
+                        <li className="nav-item dropdown-center">
+                            <button className="btn btn-outline-info me-2 nav-button dropdown-toggle"
+                                type="button" data-bs-toggle="dropdown">Listas</button>
+                            <ul className="dropdown-menu">
+                                <li>
+                                    <Link to='/listafarmacia' className="dropdown-item">Lista de Farmácias</Link>
+                                </li>
+                                <hr className="dropdown-divider" />
+                                <li>
+                                    <Link to='/listamedicamento' className="dropdown-item">Lista de Medicamentos</Link>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <Link to='/' className="nav-item m-2">
+                                <button className="btn btn-outline-primary" hidden={false}>Login</button>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to='/' className="nav-item">
+                                <button className="btn btn-outline-primary">Logout</button>
+                            </Link>
+                        </li>
                     </div>
-                    <div className="dropdown">
-                        <button className="dropdown-btn">Listas</button>
-                        <div className="dropdown-content">
-                            <Link to='/listafarmacia'>Lista de Farmácias</Link>
-                            <Link to='/listamedicamento'>Lista de Medicamentos</Link>
-                        </div>
-                    </div>
-                </div>
-            </nav>
+                </ul>
+            </nav >
         </header >
     );
 };

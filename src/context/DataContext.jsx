@@ -16,8 +16,6 @@ export const DataProvider = ({ children }) => {
 
 
     const buscaFarm = () => {
-
-        console.log("teste")
         fetch("http://localhost:8080/farmacia")
             .then((response) => response.json())
             .then((dados) => setFarmacia(dados))
@@ -25,7 +23,6 @@ export const DataProvider = ({ children }) => {
     }
 
     const buscaMed = () => {
-
         fetch("http://localhost:8080/medicamento")
             .then((response) => response.json())
             .then((dados) => setMedicamento(dados))
@@ -50,7 +47,6 @@ export const DataProvider = ({ children }) => {
             .then((response) => response.json())
             .then((dados) => console.log(dados))
             .catch((error) => console.log(error));
-        console.log(dados, retDados)
         return retDados;
     }
 
