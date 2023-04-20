@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom'
+import { useData } from '../../context/useData'
 
 export const Header = () => {
+
+    const { varHidden } = useData();
     return (
         <header>
             <nav>
@@ -15,7 +18,7 @@ export const Header = () => {
                     <div className="d-flex justify-content-between">
                         <li className="nav-item dropdown-center">
                             <button className="btn btn-outline-info me-2 nav-button dropdown-toggle"
-                                type="button" data-bs-toggle="dropdown">Cadastro</button>
+                                type="button" data-bs-toggle="dropdown" hidden={varHidden}>Cadastro</button>
                             <ul className="dropdown-menu">
                                 <li>
                                     <Link to='/cadastrofarmacia' className="dropdown-item">Farmácias</Link>
@@ -28,7 +31,7 @@ export const Header = () => {
                         </li>
                         <li className="nav-item dropdown-center">
                             <button className="btn btn-outline-info me-2 nav-button dropdown-toggle"
-                                type="button" data-bs-toggle="dropdown">Listas</button>
+                                type="button" data-bs-toggle="dropdown" hidden={varHidden}>Listas</button>
                             <ul className="dropdown-menu">
                                 <li>
                                     <Link to='/listafarmacia' className="dropdown-item">Lista de Farmácias</Link>
@@ -41,12 +44,12 @@ export const Header = () => {
                         </li>
                         <li>
                             <Link to='/' className="nav-item m-2">
-                                <button className="btn btn-outline-primary" hidden={false}>Login</button>
+                                <button className="btn btn-outline-primary" hidden={!varHidden}>Login</button>
                             </Link>
                         </li>
                         <li>
                             <Link to='/' className="nav-item">
-                                <button className="btn btn-outline-primary">Logout</button>
+                                <button className="btn btn-outline-primary" hidden={varHidden}>Logout</button>
                             </Link>
                         </li>
                     </div>

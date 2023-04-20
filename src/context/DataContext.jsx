@@ -7,6 +7,11 @@ export const DataProvider = ({ children }) => {
     //Variáveis do contexto
     const [farmacia, setFarmacia] = useState([]);
     const [medicamento, setMedicamento] = useState([]);
+    const [varHidden, setVarHidden] = useState(true);
+
+    const alteraVarHidden = () => {
+        setVarHidden(!varHidden);
+    }
 
     //Atualiza e busca os valores do arquivo json
     useEffect(() => {
@@ -54,8 +59,10 @@ export const DataProvider = ({ children }) => {
         <dataContext.Provider value={{
             farmacia,
             medicamento,
+            varHidden,
             salva,
-            pesquisa
+            pesquisa,
+            alteraVarHidden
         }}>
             {children}
         </dataContext.Provider >

@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useData } from "../../../context/useData";
 import "./formLogin.css";
+
 
 export const FormLogin = () => {
 
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
+    const { alteraVarHidden } = useData();
     const navigate = useNavigate();
 
     let usuario = {
@@ -21,6 +24,7 @@ export const FormLogin = () => {
         if (usuario.senha.length >= 8) {
             if (/^[A-Za-z0-9]*$/.test(usuario.senha)) {
                 localStorage.setItem("Usuário", JSON.stringify(usuario));
+                alteraVarHidden();
                 navigate('/listafarmacia');
             }
         }
