@@ -4,13 +4,9 @@ import { useEffect } from "react";
 
 export const FarmaciaTable = () => {
 
-    const { farmacia, buscaFarmacia } = useData();
-
-    useEffect(() => {
-        buscaFarmacia();
-    }, []);
-
+    const { farmacia } = useData();
     return (
+
         <table className="table table-primary table-bordered border-dark table-striped mt-4">
 
             {/* Cabeçalho da tabela */}

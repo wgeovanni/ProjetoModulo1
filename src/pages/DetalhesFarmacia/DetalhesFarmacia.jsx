@@ -4,7 +4,7 @@ export const DetalhesFarmacia = () => {
 
     const location = useLocation();
 
-    console.log(location.state.dado)
+    console.log(location.state.dado);
 
     return (
         <p>teste</p>

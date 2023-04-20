@@ -1,6 +1,9 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
+import { useData } from "../../../context/useData";
 
 export const FormCadFarmacia = () => {
+
+    const { salva, pesquisa } = useData();
 
     //Variáveis para captura dos dados
     const [razao, setRazao] = useState("");
@@ -43,29 +46,20 @@ export const FormCadFarmacia = () => {
     }
 
     //Valida Cep e faz requisição
-    const pesquisaCep = (formCep) => {
+    const confereCep = (formCep) => {
         setCep(formCep);
 
+        //Testa se o cep tem o formato válido
         if (formCep != "" && formCep.length == 8) {
-            fetch(`https://viacep.com.br/ws/${formCep}/json/`)
-                .then((response) => response.json())
-                .then((dados) => insereDados(dados))
+            const dados = pesquisa(formCep);
+            insereDados(dados);
+            salva("farmacia", farmacia);
         } else {
             setEndereco("");
             setBairro("");
             setCidade("");
             setEstado("");
         }
-    }
-
-    const salvaFarmacia = () => {
-        fetch("http://localhost:8080/farmacia", {
-            method: "POST",
-            body: JSON.stringify(farmacia),
-            headers: {
-                "Content-Type": "application/json"
-            }
-        })
     }
 
     const validaForm = () => {
@@ -102,7 +96,7 @@ export const FormCadFarmacia = () => {
                 onChange={(event) => setCel(event.target.value)} />
             <label htmlFor="cep">CEP</label>
             <input type="number" name="cep" id="cep" placeholder="Digite o CEP" max={99999999} required
-                onChange={(event) => { pesquisaCep(event.target.value) }} />
+                onChange={(event) => { confereCep(event.target.value) }} />
             <hr />
             <label htmlFor="endereco">Logradouro/Endereço</label>
             <input type="text" name="endereco" id="endereco" value={endereco} required
