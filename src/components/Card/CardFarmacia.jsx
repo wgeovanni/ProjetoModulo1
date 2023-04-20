@@ -1,18 +1,22 @@
-import { Link } from 'react-router-dom'
+import { useNavigate } from "react-router-dom"
 
-export const CardFarmacia = ({ farmacia }) => {
+export const Farmacia = ({ farmacia }) => {
 
+    const navigate = useNavigate();
+
+    console.log(farmacia);
+
+    const detalha = () => {
+        navigate('/detalhes', { state: { dado: farmacia } });
+    }
     return (
         <tr>
             <td>{farmacia.nome}</td>
             <td>{farmacia.cnpj}</td>
             <td>{farmacia.celular}</td>
             <td>
-                <Link to="/detalhes" dadosFarmacia={farmacia}>
-                    <button type="button" data-bs-toggle="modal" data-bs-target={`#${farmacia.id}`} >Detalhes</button>
-                </Link>
+                <button type="button" onClick={detalha} >Detalhes</button>
             </td>
-            {/* Modal */}
-        </tr>
+        </tr >
     )
-} 
+}

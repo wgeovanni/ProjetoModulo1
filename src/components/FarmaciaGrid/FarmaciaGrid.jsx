@@ -1,8 +1,8 @@
-import { CardFarmacia } from "../Card/CardFarmacia";
+import { Farmacia } from "../Card/CardFarmacia";
 import { useData } from "../../context/useData"
 import { useEffect } from "react";
 
-export const FarmaciaGrid = () => {
+export const FarmaciaTable = () => {
 
     const { farmacia, buscaFarmacia } = useData();
 
@@ -27,7 +27,7 @@ export const FarmaciaGrid = () => {
             < tbody className="table-group-divider" >
                 {
                     farmacia.map((farmacia) => {
-                        return < CardFarmacia key={farmacia.id} farmacia={farmacia} />
+                        return < Farmacia key={farmacia.id} farmacia={farmacia} />
                     })
                 }
             </tbody >
