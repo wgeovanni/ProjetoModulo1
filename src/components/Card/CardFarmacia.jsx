@@ -4,8 +4,6 @@ export const Farmacia = ({ farmacia }) => {
 
     const navigate = useNavigate();
 
-    console.log(farmacia);
-
     const detalha = () => {
         navigate('/detalhes', { state: { dado: farmacia } });
     }

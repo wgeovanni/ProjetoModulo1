@@ -4,27 +4,62 @@ export const dataContext = createContext();
 
 export const DataProvider = ({ children }) => {
 
+    //Variáveis do contexto
     const [farmacia, setFarmacia] = useState([]);
     const [medicamento, setMedicamento] = useState([]);
 
-    const buscaFarmacia = () => {
+    //Atualiza e busca os valores do arquivo json
+    useEffect(() => {
+        buscaFarm("farmacia");
+        buscaMed("medicamento");
+    }, [])
+
+
+    const buscaFarm = () => {
+
+        console.log("teste")
         fetch("http://localhost:8080/farmacia")
-            .then((res) => res.json())
-            .then((dados) => setFarmacia(dados));
+            .then((response) => response.json())
+            .then((dados) => setFarmacia(dados))
+            .catch((error) => console.log(error));
     }
 
-    const buscaMedicamento = () => {
+    const buscaMed = () => {
+
         fetch("http://localhost:8080/medicamento")
-            .then((res) => res.json())
-            .then((dados) => setMedicamento(dados));
+            .then((response) => response.json())
+            .then((dados) => setMedicamento(dados))
+            .catch((error) => console.log(error));
+    }
+
+    const salva = (listabd, objeto) => {
+        fetch(`http://localhost:8080/${listabd}`, {
+            method: "POST",
+            body: JSON.stringify(objeto),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+    }
+
+    const pesquisa = (cep) => {
+
+        let retDados = null;
+
+        fetch(`https://viacep.com.br/ws/${cep}/json/`)
+            .then((response) => response.json())
+            .then((dados) => console.log(dados))
+            .catch((error) => console.log(error));
+        console.log(dados, retDados)
+        return retDados;
     }
 
     return (
         <dataContext.Provider value={{
             farmacia,
             medicamento,
-            buscaFarmacia,
-            buscaMedicamento
+            salva,
+            pesquisa
         }}>
             {children}
         </dataContext.Provider >
