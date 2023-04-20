@@ -48,9 +48,9 @@ export const DataProvider = ({ children }) => {
 
         fetch(`https://viacep.com.br/ws/${cep}/json/`)
             .then((response) => response.json())
-            .then((dados) => retDados = dados)
+            .then((dados) => console.log(dados))
             .catch((error) => console.log(error));
-
+        console.log(dados, retDados)
         return retDados;
     }
 
