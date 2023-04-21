@@ -96,7 +96,7 @@ export const DetalhesFarmacia = () => {
 
             <div className="row">
                 <div className="d-grid col-2 mx-auto mb-4">
-                    <button type="button" className="btn btn-lg btn-custom" onClick={voltar} >Voltar</button>
+                    <button type="button" className="btn btn-lg rounded-pill btn-custom" onClick={voltar} >Voltar</button>
                 </div>
             </div>
         </form >

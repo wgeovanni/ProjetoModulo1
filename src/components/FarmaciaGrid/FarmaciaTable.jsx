@@ -1,15 +1,16 @@
 import { Farmacia } from "../Card/Farmacia";
-import { useData } from "../../context/useData"
+import { useData } from "../../context/useData";
+import "./farmaciaTable.css"
 
 export const FarmaciaTable = () => {
 
     const { farmacia } = useData();
     return (
 
-        <table className="table table-info table-bordered rounded border-dark table-striped mt-4 text-center">
+        <table className="table bg-info-subtle border-dark table-striped-columns table-custom mt-4 text-center">
 
             {/* Cabeçalho da tabela */}
-            < thead >
+            <thead>
                 <tr>
                     <th>Nome Fantasia</th>
                     <th>CNPJ</th>

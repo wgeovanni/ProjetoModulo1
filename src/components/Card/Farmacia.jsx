@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom"
+import "./farmacia.css"
 
 export const Farmacia = ({ farmacia }) => {
 
@@ -8,12 +9,12 @@ export const Farmacia = ({ farmacia }) => {
         navigate('/detalhes', { state: { dado: farmacia } });
     }
     return (
-        <tr>
+        <tr className="align-middle">
             <td>{farmacia.nome}</td>
             <td>{farmacia.cnpj}</td>
             <td>{farmacia.celular}</td>
             <td>
-                <button type="button" onClick={detalha} >Detalhes</button>
+                <button className="btn bg-info rounded-pill btn-detail-custom" type="button" onClick={detalha} >Detalhes</button>
             </td>
         </tr >
     )
