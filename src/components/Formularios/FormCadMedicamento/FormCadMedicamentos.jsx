@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useData } from "../../../context/useData";
+import "./formCadMedicamentos.css"
 
 export const FormCadMedicamentos = () => {
 
@@ -47,68 +48,63 @@ export const FormCadMedicamentos = () => {
     }
 
     return (
-        <div className="container">
-            <form className="border rounded border-3 border-dark row needs-validation" novalidate onSubmit={valida} >
-                <div className="col-md-6">
-                    <label htmlFor="nomeMed" className="form-label">Nome do medicamento</label>
-                    <input type="text" className="form-control border border-3" name="nomeMed" id="nomeMed" required
-                        onChange={(event) => atualizaCampo("nomeMed", event.target.value)} />
-                    <div className="invalid-feedback">
-                        Preencha com o nome do medicamento.
-                    </div>
-                </div>
 
-                <div className="col-md-6">
-                    <label htmlFor="nomeLab" className="form-label">Nome do laboratório</label>
-                    <input type="text" className="form-control border border-3" name="nomeLab" id="nomeLab" required
-                        onChange={(event) => atualizaCampo("nomeLab", event.target.value)} />
-                    <div className="invalid-feedback">
-                        Preencha com o nome do laboratório
-                    </div>
-                </div>
+        <form className="border border-dark border-3 rounded-4 row mt-3 justify-content-md-center bg-custom" novalidate onSubmit={valida} >
+            <legend className="text-center mt-3 mb-3">Cadastro de medicamento</legend>
+            <div className="col-md-6 mb-3">
+                <label htmlFor="nomeMed" className="form-label">Nome do medicamento</label>
+                <input type="text" className="form-control border-dark" name="nomeMed" id="nomeMed"
+                    placeholder="Digite o nome do medicamento" required
+                    onChange={(event) => atualizaCampo("nomeMed", event.target.value)} />
+            </div>
 
-                <div className="col-md-4">
-                    <label htmlFor="dosagem" className="form-label">Dosagem</label>
-                    <input type="text" className="form-control border border-3" name="dosagem" id="dosagem" required
-                        onChange={(event) => atualizaCampo("dosagem", event.target.value)} />
-                    <div className="invalid-feedback">
-                        Preencha com a dosagem do medicamento.
-                    </div>
-                </div>
+            <div className="col-md-6">
+                <label htmlFor="nomeLab" className="form-label">Nome do laboratório</label>
+                <input type="text" className="form-control border-dark" name="nomeLab" id="nomeLab" required
+                    placeholder="Digite o nome do laboratório"
+                    onChange={(event) => atualizaCampo("nomeLab", event.target.value)} />
+            </div>
 
-                <div className="col-md-4">
-                    <label htmlFor="preco" className="form-label">Valor Unitário</label>
-                    <input type="text" className="form-control border border-3" name="preco" id="preco" required
+            <div className="col-md-4 mb-3">
+                <label htmlFor="dosagem" className="form-label">Dosagem</label>
+                <input type="text" className="form-control border-dark" name="dosagem" id="dosagem" required
+                    placeholder="Digite a dosagem"
+                    onChange={(event) => atualizaCampo("dosagem", event.target.value)} />
+
+            </div>
+
+            <div className="col-md-3">
+                <label htmlFor="preco" className="form-label">Valor Unitário</label>
+                <div className="input-group border border-dark">
+                    <span className="input-group-text">R$</span>
+                    <input type="number" step="0.01" className="form-control" name="preco" id="preco" required
+                        placeholder="Ex.: 10,99"
                         onChange={(event) => atualizaCampo("preco", event.target.value)} />
-                    <div className="invalid-feedback">
-                        Preencha com o valor do medicamento.
-                    </div>
                 </div>
 
-                <div className="col-md-3">
-                    <label htmlFor="tipo" className="form-label">Tipo de Medicamento</label>
-                    <select name="tipo" className="form-select border border-3" id="tipo" required
-                        onChange={(evento) => atualizaCampo("tipo", evento.target.value)}>
-                        <option>Selecione...</option>
-                        <option value="Medicamento Controlado">Medicamento Controlado</option>
-                        <option value="Medicamento Comum">Medicamento Comum</option>
-                    </select>
-                    <div className="invalid-feedback">
-                        Selecione o tipo do medicamento.
-                    </div>
-                </div>
+            </div>
 
-                <div className="col-md-6">
-                    <label htmlFor="descricao" className="form-label">Descrição</label>
-                    <input type="textarea" className="form-control border border-3" name="descricao" id="descricao"
-                        onChange={(event) => atualizaCampo("descricao", event.target.value)} />
-                    <div className="invalid-feedback">
-                        Preencha com a descrição do medicamento.
-                    </div>
-                </div>
+            <div className="col-md-4">
+                <label htmlFor="tipo" className="form-label">Tipo de Medicamento</label>
+                <select name="tipo" className="form-select border-dark" id="tipo" required
+                    onChange={(evento) => atualizaCampo("tipo", evento.target.value)}>
+                    <option>Selecione o tipo do medicamento</option>
+                    <option value="Medicamento Controlado">Medicamento Controlado</option>
+                    <option value="Medicamento Comum">Medicamento Comum</option>
+                </select>
+            </div>
 
-                <button className="btn btn-lg btn-outline-primary mt-3" type="submit">Salvar</button>
-            </form >
-        </div>
+            <div className="col-md-6 mb-2 text-center">
+                <label htmlFor="descricao" className="form-label">Descrição</label>
+                <textarea className="textarea-custom form-control border-dark" name="descricao" id="descricao"
+                    onChange={(event) => atualizaCampo("descricao", event.target.value)} />
+            </div>
+
+            <div className="row">
+                <div className="d-grid col-2 mx-auto mb-3">
+                    <button className="btn btn-lg rounded-pill btn-custom" type="submit">Salvar</button>
+                </div>
+            </div>
+        </form >
     )
 }

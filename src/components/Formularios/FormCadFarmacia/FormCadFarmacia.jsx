@@ -70,7 +70,7 @@ export const FormCadFarmacia = () => {
     }
 
     return (
-        <form className="border border-dark border-3 rounded-4 row mt-4 bg-custom" onSubmit={validaForm}>
+        <form className="border border-dark border-3 rounded-4 row justify-content-md-center mt-4 bg-custom" onSubmit={validaForm}>
             <legend className="text-center">Cadastro de Farmácia</legend>
             <div className="col-md-5 mb-3">
                 <label htmlFor="razao" className="form-label">Razão Social</label>
