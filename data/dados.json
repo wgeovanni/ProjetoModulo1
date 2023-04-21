@@ -76,6 +76,15 @@
       "preco": "R$ 20.00",
       "tipo": "Medicamento Controlado",
       "id": 3
+    },
+    {
+      "nomeMed": "",
+      "nomeLab": "",
+      "dosagem": "",
+      "descricao": "",
+      "preco": "",
+      "tipo": "",
+      "id": 4
     }
   ],
   "usuario": [

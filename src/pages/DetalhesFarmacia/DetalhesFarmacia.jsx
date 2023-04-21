@@ -31,7 +31,7 @@ export const DetalhesFarmacia = () => {
                 <label htmlFor="endereco">Logradouro/Endereço</label>
                 <input type="text" name="endereco" id="endereco" value={state.dado.endereco} readOnly />
                 <label htmlFor="numero">Número</label>
-                <input type="number" name="numero" id="numero" value={state.dado.numero} />
+                <input type="number" name="numero" id="numero" value={state.dado.numero} readOnly />
                 <label htmlFor="bairro">Bairro</label>
                 <input type="text" name="bairro" id="bairro" value={state.dado.bairro} readOnly />
                 <label htmlFor="cidade">Cidade</label>

@@ -4,12 +4,7 @@ import { useData } from '../../context/useData';
 
 export const MedicamentoGrid = () => {
 
-    const { medicamento, buscaMedicamento } = useData();
-
-    useEffect(() => {
-        buscaMedicamento();
-    }, [])
-
+    const { medicamento } = useData();
 
     return (
         <section className='row'>

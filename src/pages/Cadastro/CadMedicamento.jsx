@@ -2,6 +2,9 @@ import { FormCadMedicamentos } from "../../components/Formularios/FormCadMedicam
 
 export const CadMedicamento = () => {
     return (
-        <FormCadMedicamentos />
+        <div className="container">
+            <h2 className="text-center mt-4 mb-4">Cadastro de Medicamento</h2>
+            <FormCadMedicamentos />
+        </div>
     )
 }

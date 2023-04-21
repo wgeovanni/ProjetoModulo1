@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useData } from "../../../context/useData";
 import "./formLogin.css";
@@ -8,8 +8,12 @@ export const FormLogin = () => {
 
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
-    const { alteraVarHidden } = useData();
+    const { setVarHidden } = useData();
     const navigate = useNavigate();
+
+    useEffect(() => {
+        setVarHidden(true)
+    }, [])
 
     let usuario = {
         email: "",
@@ -24,7 +28,7 @@ export const FormLogin = () => {
         if (usuario.senha.length >= 8) {
             if (/^[A-Za-z0-9]*$/.test(usuario.senha)) {
                 localStorage.setItem("Usuário", JSON.stringify(usuario));
-                alteraVarHidden();
+                setVarHidden(false);
                 navigate('/listafarmacia');
             }
         }
