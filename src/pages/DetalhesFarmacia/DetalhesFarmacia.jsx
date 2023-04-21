@@ -11,7 +11,7 @@ export const DetalhesFarmacia = () => {
     };
 
     return (
-        <form className="border border-dark border-3 rounded-4 row justify-content-md-center mt-4 bg-custom" >
+        <form className="border border-dark border-3 rounded-4 row justify-content-md-center mt-3 bg-custom" >
             <legend className="text-center">Detalhes da Farmácia</legend>
 
             <div className="col-md-5 mb-3">

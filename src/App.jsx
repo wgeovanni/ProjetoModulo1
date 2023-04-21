@@ -7,7 +7,7 @@ export const App = () => {
   return (
     <DataProvider>
       <Header />
-      <div className='container'>
+      <div className="container">
         <Outlet />
       </div>
     </DataProvider >

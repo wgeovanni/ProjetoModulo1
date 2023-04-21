@@ -1,3 +1,13 @@
+.container-custom {
+    height: 500px;
+    width: 100%;
+    margin: auto;
+}
+
+.form-custom {
+    width: auto;
+}
+
 .table-custom {
     border-radius: 5px;
     overflow: hidden;

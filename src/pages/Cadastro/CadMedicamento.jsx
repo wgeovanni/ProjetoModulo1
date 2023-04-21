@@ -2,8 +2,6 @@ import { FormCadMedicamentos } from "../../components/Formularios/FormCadMedicam
 
 export const CadMedicamento = () => {
     return (
-        <div className="container">
-            <FormCadMedicamentos />
-        </div>
+        <FormCadMedicamentos />
     )
 }

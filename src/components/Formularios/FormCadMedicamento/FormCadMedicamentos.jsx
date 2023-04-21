@@ -48,8 +48,10 @@ export const FormCadMedicamentos = () => {
 
     return (
 
-        <form className="border border-dark border-3 rounded-4 row mt-3 justify-content-md-center bg-custom" novalidate onSubmit={valida} >
-            <legend className="text-center mt-3 mb-3">Cadastro de medicamento</legend>
+        <form className="custom-container border border-dark border-3 rounded-4 
+        row justify-content-md-center mt-3 bg-custom" onSubmit={valida} >
+
+            <legend className="text-center">Cadastro de Medicamento</legend>
             <div className="col-md-6 mb-3">
                 <label htmlFor="nomeMed" className="form-label">Nome do medicamento</label>
                 <input type="text" className="form-control border-dark" name="nomeMed" id="nomeMed"

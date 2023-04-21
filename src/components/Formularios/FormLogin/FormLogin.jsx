@@ -22,12 +22,38 @@ export const FormLogin = () => {
     }
 
     return (
-        <form className="formLogin" onSubmit={salva}>
-            <label htmlFor="email">E-mail</label>
-            <input type="email" name="email" onChange={(event) => atualizaCampo("email", event.target.value)} id="email" placeholder="exemplo@email.com" autoFocus required />
-            <label htmlFor="senha">Senha</label>
-            <input type="password" name="senha" onChange={(event) => atualizaCampo("senha", event.target.value)} id="senha" placeholder="Digite sua senha" minLength="8" required />
-            <input className="btnSubmit" type="submit" />
-        </form>
+        <div className="d-flex align-items-center justify-content-center">
+
+            <form className="form-custom custom-container border border-dark border-3 rounded-4 
+        row justify-content-md-center mt-3 bg-custom"
+                onSubmit={salva} >
+
+                <legend className="text-center">Login</legend>
+
+                <div className="row justify-content-md-center">
+                    <div className="col-md-8 mb-3">
+                        <label htmlFor="email" className="form-label">E-mail</label>
+                        <input type="email" className="form-control border-dark" name="email"
+                            id="email" placeholder="exemplo@email.com" autoFocus required
+                            onChange={(event) => atualizaCampo("email", event.target.value)} />
+                    </div>
+                </div>
+                <div className="row justify-content-md-center">
+                    <div className="col-md-8 mb-3">
+                        <label htmlFor="senha" className="form-label">Senha</label>
+                        <input type="password" className="form-control border-dark" name="senha"
+                            id="senha" placeholder="Digite sua senha" minLength="8" required
+                            onChange={(event) => atualizaCampo("senha", event.target.value)} />
+                    </div>
+                </div>
+
+                <div className="row">
+                    <div className="d-grid col-md-6 mx-auto mb-3">
+                        <input className="btn btn-lg rounded-pill btn-custom" type="submit" />
+                    </div>
+                </div>
+
+            </form>
+        </div>
     );
 };
