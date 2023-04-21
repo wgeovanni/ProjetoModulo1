@@ -22,10 +22,10 @@ export const FormLogin = () => {
     }
 
     return (
-        <div className="d-flex align-items-center justify-content-center">
+        <div className="d-flex align-items-center justify-content-center m-2">
 
-            <form className="form-custom custom-container border border-dark border-3 rounded-4 
-        row justify-content-md-center mt-3 bg-custom"
+            <form className="form border border-dark border-3 rounded-4 
+        row  mt-3 bg-custom"
                 onSubmit={salva} >
 
                 <legend className="text-center">Login</legend>

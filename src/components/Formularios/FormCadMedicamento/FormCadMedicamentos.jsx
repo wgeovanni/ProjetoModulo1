@@ -48,7 +48,7 @@ export const FormCadMedicamentos = () => {
 
     return (
 
-        <form className="custom-container border border-dark border-3 rounded-4 
+        <form className="border border-dark border-3 rounded-4 
         row justify-content-md-center mt-3 bg-custom" onSubmit={valida} >
 
             <legend className="text-center">Cadastro de Medicamento</legend>
