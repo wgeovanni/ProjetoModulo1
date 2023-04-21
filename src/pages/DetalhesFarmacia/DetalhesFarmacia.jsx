@@ -1,5 +1,4 @@
 import { useLocation, useNavigate } from 'react-router-dom'
-import "./detalhesFarmacia.css"
 
 export const DetalhesFarmacia = () => {
 

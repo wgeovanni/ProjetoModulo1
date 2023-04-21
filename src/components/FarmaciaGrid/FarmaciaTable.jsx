@@ -1,6 +1,5 @@
 import { Farmacia } from "../Card/Farmacia";
 import { useData } from "../../context/useData";
-import "./farmaciaTable.css"
 
 export const FarmaciaTable = () => {
 

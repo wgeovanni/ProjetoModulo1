@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom"
-import "./farmacia.css"
 
 export const Farmacia = ({ farmacia }) => {
 

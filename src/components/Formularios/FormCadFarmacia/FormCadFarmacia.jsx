@@ -169,7 +169,7 @@ export const FormCadFarmacia = () => {
             </div>
             <div className="row">
                 <div className="d-grid col-2 mx-auto mb-4">
-                    <input type="submit" className="btn btn-lg rounded-pill btn-custom" />
+                    <input type="submit" className="btn btn-lg rounded-pill btn-custom" value="Salvar" />
                 </div>
             </div>
         </form>

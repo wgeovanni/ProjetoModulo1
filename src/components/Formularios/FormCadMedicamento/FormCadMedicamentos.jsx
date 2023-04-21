@@ -1,6 +1,5 @@
 import { useState } from "react"
 import { useData } from "../../../context/useData";
-import "./formCadMedicamentos.css"
 
 export const FormCadMedicamentos = () => {
 
