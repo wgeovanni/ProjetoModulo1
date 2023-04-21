@@ -2,11 +2,6 @@ import { useEffect, useState } from "react";
 import { useData } from "../../../context/useData";
 import "./formLogin.css";
 
-
-export const salva = (usuario) => {
-    event.preventDefault();
-    validaForm(usuario);
-}
 export const FormLogin = () => {
 
     const [usuario, setUsuario] = useState("");
@@ -22,8 +17,13 @@ export const FormLogin = () => {
         setUsuario(novoDado);
     }
 
+    const salva = (usuario) => {
+        event.preventDefault();
+        validaForm(usuario);
+    }
+
     return (
-        <form className="formLogin" onSubmit={(e) => salva(usuario)}>
+        <form className="formLogin" onSubmit={salva}>
             <label htmlFor="email">E-mail</label>
             <input type="email" name="email" onChange={(event) => atualizaCampo("email", event.target.value)} id="email" placeholder="exemplo@email.com" autoFocus required />
             <label htmlFor="senha">Senha</label>
