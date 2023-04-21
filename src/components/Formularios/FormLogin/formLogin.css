@@ -11,7 +11,7 @@ label {
     display: block;
     padding: 5px;
     margin: 5px auto 5px;
-    text-align: center;
+
     font-size: 20px;
 }
 
@@ -36,12 +36,4 @@ input {
     background-color: #ecece2;
     transform: translate(3px, 3px);
     box-shadow: none;
-}
-
-.legenda {
-    text-align: center;
-}
-
-fieldset {
-    margin: 10px 10px;
 }

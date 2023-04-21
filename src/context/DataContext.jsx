@@ -56,13 +56,13 @@ export const DataProvider = ({ children }) => {
 
     const validaForm = (usuario) => {
 
-        if (usuario.senha.length >= 8) {
-            if (/^[A-Za-z0-9]*$/.test(usuario.senha)) {
-                localStorage.setItem("Usuário", JSON.stringify(usuario));
-                setVarHidden(false);
-                navigate('/listafarmacia');
-            }
+        //if (usuario.senha >= 8) {
+        if (/^[A-Za-z0-9]*$/.test(usuario.senha)) {
+            localStorage.setItem("Usuário", JSON.stringify(usuario));
+            setVarHidden(false);
+            navigate('/listafarmacia');
         }
+        //}
     }
 
     return (

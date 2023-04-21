@@ -1,4 +1,4 @@
-import { Farmacia } from "../Card/CardFarmacia";
+import { Farmacia } from "../Card/Farmacia";
 import { useData } from "../../context/useData"
 
 export const FarmaciaTable = () => {
@@ -6,7 +6,7 @@ export const FarmaciaTable = () => {
     const { farmacia } = useData();
     return (
 
-        <table className="table table-primary table-bordered border-dark table-striped mt-4">
+        <table className="table table-info table-bordered rounded border-dark table-striped mt-4 text-center">
 
             {/* Cabeçalho da tabela */}
             < thead >
