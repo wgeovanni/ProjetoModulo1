@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import { useData } from '../../context/useData'
-import { validaForm } from '../Formularios/FormLogin/FormLogin'
 
 export const Header = () => {
 
@@ -46,7 +45,7 @@ export const Header = () => {
                         <li>
                             <Link to='/' className="nav-item m-2">
                                 <button className="btn btn-outline-primary" hidden={!varHidden}
-                                    onClick={validaForm}>Login</button>
+                                >Login</button>
                             </Link>
                         </li>
                         <li>

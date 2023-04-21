@@ -5,14 +5,7 @@ export const FormCadMedicamentos = () => {
 
     const { salva } = useData();
     //Objeto medicamento
-    const [medicamento, setMedicamento] = useState({
-        nomeMed: "",
-        nomeLab: "",
-        dosagem: "",
-        descricao: "",
-        preco: "",
-        tipo: "",
-    });
+    const [medicamento, setMedicamento] = useState("");
 
     //Captura os dados
     const atualizaCampo = (campo, valor) => {
