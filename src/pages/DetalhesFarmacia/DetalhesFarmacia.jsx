@@ -21,7 +21,7 @@ export const DetalhesFarmacia = () => {
                     value={state.dado.razao} readOnly />
             </div>
 
-            <div className="col-md-5 mb-3">
+            <div className="col-md-5">
                 <label htmlFor="nome" className="form-label">Nome Fantasia</label>
                 <input type="text" className="form-control border-dark" name="nome" id="nome"
                     value={state.dado.nome} readOnly />
@@ -33,7 +33,7 @@ export const DetalhesFarmacia = () => {
                     value={state.dado.cnpj} readOnly />
             </div>
 
-            <div className="col-md-5">
+            <div className="col-md-5 mb-3">
                 <label htmlFor="email" className="form-label">E-mail</label>
                 <input type="email" className="form-control border-dark" name="email" id="email"
                     value={state.dado.email} readOnly />
@@ -58,25 +58,25 @@ export const DetalhesFarmacia = () => {
             </div>
             <hr className="mt-3" />
 
-            <div className="col-md-4 mb-3">
+            <div className="col-md-5 mb-3">
                 <label htmlFor="endereco" className="form-label">Logradouro/Endereço</label>
                 <input type="text" className="form-control border-dark" name="endereco" id="endereco"
                     value={state.dado.endereco} readOnly />
             </div>
 
-            <div className="col-md-1">
+            <div className="col-md-2">
                 <label htmlFor="numero" className="form-label">Número</label>
                 <input type="number" className="form-control border-dark" name="numero" id="numero"
                     value={state.dado.numero} readOnly />
             </div>
 
-            <div className="col-md-3">
+            <div className="col-md-5">
                 <label htmlFor="bairro" className="form-label">Bairro</label>
                 <input type="text" className="form-control border-dark" name="bairro" id="bairro"
                     value={state.dado.bairro} readOnly />
             </div>
 
-            <div className="col-md-4">
+            <div className="col-md-6">
                 <label htmlFor="complemento" className="form-label">Complemento</label>
                 <input type="text" className="form-control border-dark" name="complemento" id="complemento"
                     value={state.dado.complemento} readOnly />
@@ -96,7 +96,8 @@ export const DetalhesFarmacia = () => {
 
             <div className="row">
                 <div className="d-grid col-2 mx-auto mb-4">
-                    <button type="button" className="btn btn-lg rounded-pill btn-custom" onClick={voltar} >Voltar</button>
+                    <button type="button" className="btn btn-lg rounded-pill btn-custom"
+                        onClick={voltar} >Voltar</button>
                 </div>
             </div>
         </form >
