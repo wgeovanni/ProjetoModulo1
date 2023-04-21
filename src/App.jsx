@@ -6,7 +6,9 @@ export const App = () => {
   return (
     <DataProvider>
       <Header />
-      <Outlet />
-    </DataProvider>
+      <div className='container'>
+        <Outlet />
+      </div>
+    </DataProvider >
   )
 }

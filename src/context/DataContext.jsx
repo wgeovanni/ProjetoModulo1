@@ -7,6 +7,7 @@ export const DataProvider = ({ children }) => {
     //Variáveis do contexto
     const [farmacia, setFarmacia] = useState([]);
     const [medicamento, setMedicamento] = useState([]);
+    const [varHidden, setVarHidden] = useState(true);
 
     //Atualiza e busca os valores do arquivo json
     useEffect(() => {
@@ -29,6 +30,7 @@ export const DataProvider = ({ children }) => {
             .catch((error) => console.log(error));
     }
 
+    //Salva faramcia ou medicamento dependendo dos argumentos recebidos
     const salva = (listabd, objeto) => {
         fetch(`http://localhost:8080/${listabd}`, {
             method: "POST",
@@ -39,6 +41,7 @@ export const DataProvider = ({ children }) => {
         })
     }
 
+    //Faz requisição na API do IBGE
     const pesquisa = (cep) => {
 
         let retDados = null;
@@ -54,8 +57,10 @@ export const DataProvider = ({ children }) => {
         <dataContext.Provider value={{
             farmacia,
             medicamento,
+            varHidden,
             salva,
-            pesquisa
+            pesquisa,
+            setVarHidden
         }}>
             {children}
         </dataContext.Provider >
