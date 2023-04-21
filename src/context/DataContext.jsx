@@ -1,10 +1,12 @@
 import { useState, createContext, useEffect } from "react"
+import { useNavigate } from "react-router-dom";
 
 export const dataContext = createContext();
 
 export const DataProvider = ({ children }) => {
 
     //Variáveis do contexto
+    const navigate = useNavigate();
     const [farmacia, setFarmacia] = useState([]);
     const [medicamento, setMedicamento] = useState([]);
     const [varHidden, setVarHidden] = useState(true);
@@ -13,8 +15,7 @@ export const DataProvider = ({ children }) => {
     useEffect(() => {
         buscaFarm("farmacia");
         buscaMed("medicamento");
-    }, [])
-
+    }, []);
 
     const buscaFarm = () => {
         fetch("http://localhost:8080/farmacia")
@@ -53,6 +54,17 @@ export const DataProvider = ({ children }) => {
         return retDados;
     }
 
+    const validaForm = (usuario) => {
+
+        if (usuario.senha.length >= 8) {
+            if (/^[A-Za-z0-9]*$/.test(usuario.senha)) {
+                localStorage.setItem("Usuário", JSON.stringify(usuario));
+                setVarHidden(false);
+                navigate('/listafarmacia');
+            }
+        }
+    }
+
     return (
         <dataContext.Provider value={{
             farmacia,
@@ -60,7 +72,8 @@ export const DataProvider = ({ children }) => {
             varHidden,
             salva,
             pesquisa,
-            setVarHidden
+            setVarHidden,
+            validaForm
         }}>
             {children}
         </dataContext.Provider >
