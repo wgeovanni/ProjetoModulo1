@@ -3,11 +3,15 @@ import { useData } from "../../../context/useData";
 import "./formLogin.css";
 
 
+export const salva = (usuario) => {
+    event.preventDefault();
+    validaForm(usuario);
+}
 export const FormLogin = () => {
 
     const [usuario, setUsuario] = useState("");
 
-    const { setVarHidden, validaForm } = useData();
+    const { setVarHidden } = useData();
 
     useEffect(() => {
         setVarHidden(true);
@@ -18,14 +22,8 @@ export const FormLogin = () => {
         setUsuario(novoDado);
     }
 
-    const salva = () => {
-        event.preventDefault();
-        validaForm(usuario);
-    }
-
-
     return (
-        <form className="formLogin" onSubmit={salva}>
+        <form className="formLogin" onSubmit={(e) => salva(usuario)}>
             <label htmlFor="email">E-mail</label>
             <input type="email" name="email" onChange={(event) => atualizaCampo("email", event.target.value)} id="email" placeholder="exemplo@email.com" autoFocus required />
             <label htmlFor="senha">Senha</label>
