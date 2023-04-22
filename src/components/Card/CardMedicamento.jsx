@@ -2,8 +2,12 @@ export const CardMedicamento = ({ medicamento }) => {
 
     return (
         <div className="card text-center">
-            <img className="card-img-top" src="../../../src/assets/medicamento.png" alt="Caixa de remédio"
-                title="Caixa de remédio" data-bs-toggle="modal" data-bs-target={`#${medicamento.id}`} />
+
+            {/* Imagem do Card */}
+            <div>
+                <img className="card-img-top w-75" src="../../../src/assets/medicamento.png" alt="Caixa de remédio"
+                    title="Caixa de remédio" data-bs-toggle="modal" data-bs-target={`#${medicamento.id}`} />
+            </div>
 
             {/* Modal */}
             <div className="modal fade" tabIndex="-1" id={medicamento.id}>
@@ -20,9 +24,9 @@ export const CardMedicamento = ({ medicamento }) => {
                         <div className="modal-body">
                             <p>Nome do Laboratório: {medicamento.nomeLab}</p>
                             <p>Dosagem: {medicamento.dosagem}</p>
-                            <p>Descrição{medicamento.descricao}</p>
                             <p>Valor: R$ {medicamento.preco}</p>
                             <p className={medicamento.tipo == "Medicamento Comum" ? "text-dark" : "text-danger"}>Tipo de medicamento: {medicamento.tipo}</p>
+                            <p>Descrição: {medicamento.descricao}</p>
                         </div>
 
                         {/* Footer do Modal */}

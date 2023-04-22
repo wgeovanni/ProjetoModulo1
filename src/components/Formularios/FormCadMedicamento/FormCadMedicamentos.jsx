@@ -66,7 +66,7 @@ export const FormCadMedicamentos = () => {
                     onChange={(event) => atualizaCampo("nomeLab", event.target.value)} />
             </div>
 
-            <div className="col-md-4 mb-3">
+            <div className="col-md-3 mb-3">
                 <label htmlFor="dosagem" className="form-label">Dosagem</label>
                 <input type="text" className="form-control border-dark" name="dosagem" id="dosagem" required
                     placeholder="Digite a dosagem"
@@ -74,7 +74,7 @@ export const FormCadMedicamentos = () => {
 
             </div>
 
-            <div className="col-md-3">
+            <div className="col-md-3 mb-3">
                 <label htmlFor="preco" className="form-label">Valor Unitário</label>
                 <div className="input-group border border-dark">
                     <span className="input-group-text">R$</span>
@@ -85,7 +85,7 @@ export const FormCadMedicamentos = () => {
 
             </div>
 
-            <div className="col-md-4">
+            <div className="col-md-6 mb-3">
                 <label htmlFor="tipo" className="form-label">Tipo de Medicamento</label>
                 <select name="tipo" className="form-select border-dark" id="tipo" required
                     onChange={(evento) => atualizaCampo("tipo", evento.target.value)}>
@@ -101,11 +101,13 @@ export const FormCadMedicamentos = () => {
                     onChange={(event) => atualizaCampo("descricao", event.target.value)} />
             </div>
 
-            <div className="row">
-                <div className="d-grid col-2 mx-auto mb-3">
+
+            <div className="d-flex justify-content-center">
+                <div className="mb-4">
                     <button className="btn btn-lg rounded-pill btn-custom" type="submit">Salvar</button>
                 </div>
             </div>
+
         </form >
     )
 }

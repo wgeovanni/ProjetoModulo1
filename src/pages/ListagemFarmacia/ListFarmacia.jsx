@@ -1,4 +1,4 @@
-import { FarmaciaTable } from "../../components/FarmaciaGrid/FarmaciaTable"
+import { FarmaciaTable } from "../../components/FarmaciaTable/FarmaciaTable"
 
 export const ListFarmacia = () => {
 

@@ -76,6 +76,78 @@
       "preco": "R$ 20.00",
       "tipo": "Medicamento Controlado",
       "id": 3
+    },
+    {
+      "nomeMed": "remedio3",
+      "nomeLab": "labInc3",
+      "dosagem": "30ml",
+      "descricao": "remedio para febre",
+      "preco": "R$ 20.00",
+      "tipo": "Medicamento Controlado",
+      "id": 4
+    },
+    {
+      "nomeMed": "remedio3",
+      "nomeLab": "labInc3",
+      "dosagem": "30ml",
+      "descricao": "remedio para febre",
+      "preco": "R$ 20.00",
+      "tipo": "Medicamento Controlado",
+      "id": 5
+    },
+    {
+      "nomeMed": "remedio3",
+      "nomeLab": "labInc3",
+      "dosagem": "30ml",
+      "descricao": "remedio para febre",
+      "preco": "R$ 20.00",
+      "tipo": "Medicamento Controlado",
+      "id": 6
+    },
+    {
+      "nomeMed": "remedio3",
+      "nomeLab": "labInc3",
+      "dosagem": "30ml",
+      "descricao": "remedio para febre",
+      "preco": "R$ 20.00",
+      "tipo": "Medicamento Controlado",
+      "id": 7
+    },
+    {
+      "nomeMed": "remedio3",
+      "nomeLab": "labInc3",
+      "dosagem": "30ml",
+      "descricao": "remedio para febre",
+      "preco": "R$ 20.00",
+      "tipo": "Medicamento Controlado",
+      "id": 8
+    },
+    {
+      "nomeMed": "remedio3",
+      "nomeLab": "labInc3",
+      "dosagem": "30ml",
+      "descricao": "remedio para febre",
+      "preco": "R$ 20.00",
+      "tipo": "Medicamento Controlado",
+      "id": 9
+    },
+    {
+      "nomeMed": "remedio3",
+      "nomeLab": "labInc3",
+      "dosagem": "30ml",
+      "descricao": "remedio para febre",
+      "preco": "R$ 20.00",
+      "tipo": "Medicamento Controlado",
+      "id": 10
+    },
+    {
+      "nomeMed": "remedio3 asdasdsadasdsd ads",
+      "nomeLab": "labInc3",
+      "dosagem": "30ml",
+      "descricao": "remedio para febre",
+      "preco": "R$ 20.00",
+      "tipo": "Medicamento Controlado",
+      "id": 11
     }
   ],
   "usuario": [

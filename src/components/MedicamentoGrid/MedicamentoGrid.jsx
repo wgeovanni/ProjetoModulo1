@@ -1,5 +1,4 @@
 import { CardMedicamento } from '../Card/CardMedicamento'
-import { useEffect } from 'react';
 import { useData } from '../../context/useData';
 
 export const MedicamentoGrid = () => {
@@ -7,14 +6,20 @@ export const MedicamentoGrid = () => {
     const { medicamento } = useData();
 
     return (
-        <section className='row'>
+        <section className="row">
+
+
             {/* Gera um card de cada medicamento */}
             {medicamento.map((medicamento) => {
-                return (<div className="col-3 mb-2 mr-2" key={medicamento.id}>
-                    <CardMedicamento medicamento={medicamento} />
-                </div>
+                return (
+
+                    <div className="col-lg-4 col-md-6 mb-3 text-center" key={medicamento.id}>
+                        <CardMedicamento medicamento={medicamento} />
+                    </div>
                 )
-            })}
+            })
+            }
+
         </section >
     )
 };
