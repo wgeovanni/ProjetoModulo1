@@ -7,15 +7,37 @@ export const DataProvider = ({ children }) => {
 
     //Variáveis do contexto
     const navigate = useNavigate();
+    const [loginUsuario, setLoginUsuario] = useState("");
     const [farmacia, setFarmacia] = useState([]);
     const [medicamento, setMedicamento] = useState([]);
     const [varHidden, setVarHidden] = useState(true);
+
+    //Atualiza a cada mudança do estado loginUsuario
+    useEffect(() => { }, [loginUsuario]);
 
     //Atualiza e busca os valores do arquivo json
     useEffect(() => {
         buscaFarm("farmacia");
         buscaMed("medicamento");
     }, []);
+
+    const atualizaCampo = (campo, valor) => {
+        const novoDado = { ...loginUsuario, [campo]: valor };
+        setLoginUsuario(novoDado);
+    }
+
+    //Efetua login do usuário
+    const validaForm = () => {
+
+        console.log(loginUsuario)
+        //if (usuario.senha >= 8) {
+        if (/^[A-Za-z0-9]*$/.test(loginUsuario.senha)) {
+            localStorage.setItem("Usuário", JSON.stringify(loginUsuario));
+            setVarHidden(false);
+            navigate('/listafarmacia');
+        }
+        //}
+    }
 
     const buscaFarm = () => {
         fetch("http://localhost:8080/farmacia")
@@ -54,17 +76,6 @@ export const DataProvider = ({ children }) => {
         return retDados;
     }
 
-    const validaForm = (usuario) => {
-
-        //if (usuario.senha >= 8) {
-        if (/^[A-Za-z0-9]*$/.test(usuario.senha)) {
-            localStorage.setItem("Usuário", JSON.stringify(usuario));
-            setVarHidden(false);
-            navigate('/listafarmacia');
-        }
-        //}
-    }
-
     return (
         <dataContext.Provider value={{
             farmacia,
@@ -73,7 +84,8 @@ export const DataProvider = ({ children }) => {
             salva,
             pesquisa,
             setVarHidden,
-            validaForm
+            validaForm,
+            atualizaCampo
         }}>
             {children}
         </dataContext.Provider >

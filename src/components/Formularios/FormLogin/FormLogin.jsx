@@ -3,22 +3,15 @@ import { useData } from "../../../context/useData";
 
 export const FormLogin = () => {
 
-    const [usuario, setUsuario] = useState("");
-
-    const { setVarHidden, validaForm } = useData();
+    const { setVarHidden, validaForm, atualizaCampo } = useData();
 
     useEffect(() => {
         setVarHidden(true);
     }, [])
 
-    const atualizaCampo = (campo, valor) => {
-        const novoDado = { ...usuario, [campo]: valor };
-        setUsuario(novoDado);
-    }
-
     const salva = () => {
         event.preventDefault();
-        validaForm(usuario);
+        validaForm();
     }
 
     return (

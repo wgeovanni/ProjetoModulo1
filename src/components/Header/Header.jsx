@@ -3,7 +3,7 @@ import { useData } from '../../context/useData'
 
 export const Header = () => {
 
-    const { varHidden } = useData();
+    const { varHidden, validaForm } = useData();
     return (
         <header>
             <div className="container" id="nav-container">
@@ -50,10 +50,8 @@ export const Header = () => {
                             </div>
 
                             <div className="nav-item dropdown-center">
-                                <Link to='/' className="nav-item mb-2">
-                                    <button className="btn btn-outline-primary" hidden={!varHidden}
-                                    >Login</button>
-                                </Link>
+                                <button className="btn btn-outline-primary nav-item mb-2" hidden={!varHidden}
+                                    onClick={validaForm}>Login</button>
                             </div>
 
                             <div className="nav-item dropdown-center">
