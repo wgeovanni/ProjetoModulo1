@@ -1,10 +1,11 @@
 import { createBrowserRouter } from 'react-router-dom'
-import { App } from './App'
-import { Login } from './pages/Login/Login.jsx'
-import { ListFarmacia } from './pages/ListagemFarmacia/ListFarmacia.jsx'
-import { CadFarmacia } from './pages/Cadastro/CadFarmacia.jsx'
-import { CadMedicamento } from './pages/Cadastro/CadMedicamento.jsx'
-import { ListMedicamento } from './pages/ListagemMedicamentos/ListMedicamento.jsx'
+import { App } from "./App"
+import { Login } from "./pages/Login/Login.jsx"
+import { ListFarmacia } from "./pages/ListagemFarmacia/ListFarmacia.jsx"
+import { CadFarmacia } from "./pages/Cadastro/CadFarmacia.jsx"
+import { CadMedicamento } from "./pages/Cadastro/CadMedicamento.jsx"
+import { ListMedicamento } from "./pages/ListagemMedicamentos/ListMedicamento.jsx"
+import { DetalhesFarmacia } from "./pages/DetalhesFarmacia/DetalhesFarmacia"
 
 export const router = createBrowserRouter([
     {
@@ -30,6 +31,10 @@ export const router = createBrowserRouter([
             {
                 path: '/listamedicamento',
                 element: <ListMedicamento />
+            },
+            {
+                path: '/detalhes',
+                element: <DetalhesFarmacia />
             }
         ]
     }

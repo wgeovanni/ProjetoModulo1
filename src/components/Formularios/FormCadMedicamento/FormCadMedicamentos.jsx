@@ -1,16 +1,11 @@
 import { useState } from "react"
+import { useData } from "../../../context/useData";
 
 export const FormCadMedicamentos = () => {
 
+    const { salva } = useData();
     //Objeto medicamento
-    const [medicamento, setMedicamento] = useState({
-        nomeMed: "",
-        nomeLab: "",
-        dosagem: "",
-        descricao: "",
-        preco: "",
-        tipo: "",
-    });
+    const [medicamento, setMedicamento] = useState("");
 
     //Captura os dados
     const atualizaCampo = (campo, valor) => {
@@ -18,51 +13,101 @@ export const FormCadMedicamentos = () => {
         setMedicamento(novoDado);
     }
 
-    //Envia para o arquivo JSON
-    const salvaMedicamento = () => {
-        fetch("http://localhost:8080/medicamento", {
-            method: "POST",
-            body: JSON.stringify(medicamento),
-            headers: {
-                "Content-Type": "application/json"
-            }
-        })
-    }
-
     const cadastraMed = () => {
         event.preventDefault();
-        salvaMedicamento()
+
+        //Envia para o arquivo JSON
+        salva("medicamento", medicamento);
         alert("Medicamento cadastrado com sucesso!");
+
         //Reseta formulário
         const form = document.querySelector("form");
         form.reset();
     }
 
+    const valida = () => {
+
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.from(forms).forEach(form => {
+            form.addEventListener('submit', event => {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+
+                form.classList.add('was-validated')
+            }, false)
+        })
+
+        cadastraMed();
+    }
+
     return (
 
-        <form onSubmit={cadastraMed}>
-            <label htmlFor="nomeMed">Nome do medicamento</label>
-            <input type="text" name="nomeMed" id="nomeMed" required
-                onChange={(event) => atualizaCampo("nomeMed", event.target.value)} />
-            <label htmlFor="nomeLab">Nome do laboratório</label>
-            <input type="text" name="nomeLab" id="nomeLab" required
-                onChange={(event) => atualizaCampo("nomeLab", event.target.value)} />
-            <label htmlFor="dosagem">Dosagem</label>
-            <input type="text" name="dosagem" id="dosagem" required
-                onChange={(event) => atualizaCampo("dosagem", event.target.value)} />
-            <label htmlFor="descricao">Descrição</label>
-            <input type="textarea" name="descricao" id="descricao"
-                onChange={(event) => atualizaCampo("descricao", event.target.value)} />
-            <label htmlFor="preco">Valor Unitário</label>
-            <input type="text" name="preco" id="preco" required
-                onChange={(event) => atualizaCampo("preco", event.target.value)} />
-            <label htmlFor="tipo">Tipo de Medicamento</label>
-            <select name="tipo" id="tipo" required onChange={(evento) => atualizaCampo("tipo", evento.target.value)}>
-                <option>Selecione...</option>
-                <option value="Medicamento Controlado">Medicamento Controlado</option>
-                <option value="Medicamento Comum">Medicamento Comum</option>
-            </select>
-            <input type="submit" />
-        </form>
+        <form className="border border-dark border-3 rounded-4 
+        row justify-content-md-center mt-3 bg-custom" onSubmit={valida} >
+
+            <legend className="text-center">Cadastro de Medicamento</legend>
+            <div className="col-md-6 mb-3">
+                <label htmlFor="nomeMed" className="form-label">Nome do medicamento</label>
+                <input type="text" className="form-control border-dark" name="nomeMed" id="nomeMed"
+                    placeholder="Digite o nome do medicamento" required
+                    onChange={(event) => atualizaCampo("nomeMed", event.target.value)} />
+            </div>
+
+            <div className="col-md-6">
+                <label htmlFor="nomeLab" className="form-label">Nome do laboratório</label>
+                <input type="text" className="form-control border-dark" name="nomeLab" id="nomeLab" required
+                    placeholder="Digite o nome do laboratório"
+                    onChange={(event) => atualizaCampo("nomeLab", event.target.value)} />
+            </div>
+
+            <div className="col-md-3 mb-3">
+                <label htmlFor="dosagem" className="form-label">Dosagem</label>
+                <input type="text" className="form-control border-dark" name="dosagem" id="dosagem" required
+                    placeholder="Digite a dosagem"
+                    onChange={(event) => atualizaCampo("dosagem", event.target.value)} />
+
+            </div>
+
+            <div className="col-md-3 mb-3">
+                <label htmlFor="preco" className="form-label">Valor Unitário</label>
+                <div className="input-group border border-dark">
+                    <span className="input-group-text">R$</span>
+                    <input type="number" step="0.01" className="form-control" name="preco" id="preco" required
+                        placeholder="Ex.: 10,99"
+                        onChange={(event) => atualizaCampo("preco", event.target.value)} />
+                </div>
+
+            </div>
+
+            <div className="col-md-6 mb-3">
+                <label htmlFor="tipo" className="form-label">Tipo de Medicamento</label>
+                <select name="tipo" className="form-select border-dark" id="tipo" required
+                    onChange={(evento) => atualizaCampo("tipo", evento.target.value)}>
+                    <option>Selecione o tipo do medicamento</option>
+                    <option value="Medicamento Controlado">Medicamento Controlado</option>
+                    <option value="Medicamento Comum">Medicamento Comum</option>
+                </select>
+            </div>
+
+            <div className="col-md-6 mb-2 text-center">
+                <label htmlFor="descricao" className="form-label">Descrição</label>
+                <textarea className="textarea-custom form-control border-dark" name="descricao" id="descricao"
+                    onChange={(event) => atualizaCampo("descricao", event.target.value)} />
+            </div>
+
+
+            <div className="d-flex justify-content-center">
+                <div className="mb-4">
+                    <button className="btn btn-lg rounded-pill btn-custom" type="submit">Salvar</button>
+                </div>
+            </div>
+
+        </form >
     )
 }

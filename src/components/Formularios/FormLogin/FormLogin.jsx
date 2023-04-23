@@ -1,38 +1,52 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import "./formLogin.css";
+import { useEffect, useState } from "react";
+import { useData } from "../../../context/useData";
 
 export const FormLogin = () => {
 
-    const [email, setEmail] = useState("");
-    const [senha, setSenha] = useState("");
-    const navigate = useNavigate();
+    const { setVarHidden, validaForm, atualizaCampo } = useData();
 
-    let usuario = {
-        email: "",
-        senha: "",
-    }
+    useEffect(() => {
+        setVarHidden(true);
+    }, [])
 
-    const validaForm = () => {
+    const salva = () => {
         event.preventDefault();
-        usuario.email = email;
-        usuario.senha = senha;
-
-        if (usuario.senha.length >= 8) {
-            if (/^[A-Za-z0-9]*$/.test(usuario.senha)) {
-                localStorage.setItem("Usuário", JSON.stringify(usuario));
-                navigate('/listafarmacia');
-            }
-        }
+        validaForm();
     }
 
     return (
-        <form className="formLogin" onSubmit={validaForm}>
-            <label htmlFor="email">E-mail</label>
-            <input type="email" name="email" onChange={(event) => setEmail(event.target.value)} id="email" placeholder="exemplo@email.com" autoFocus required />
-            <label htmlFor="senha">Senha</label>
-            <input type="password" name="senha" onChange={(event) => setSenha(event.target.value)} id="senha" placeholder="Digite sua senha" minlenght="8" required />
-            <input className="btnSubmit" type="submit" />
-        </form>
+        <div className="d-flex align-items-center justify-content-center m-2">
+
+            <form className="form border border-dark border-3 rounded-4 
+        row  mt-3 bg-custom"
+                onSubmit={salva} >
+
+                <legend className="text-center">Login</legend>
+
+                <div className="row justify-content-md-center">
+                    <div className="col-md-8 mb-3">
+                        <label htmlFor="email" className="form-label">E-mail</label>
+                        <input type="email" className="form-control border-dark" name="email"
+                            id="email" placeholder="exemplo@email.com" autoFocus required
+                            onChange={(event) => atualizaCampo("email", event.target.value)} />
+                    </div>
+                </div>
+                <div className="row justify-content-md-center">
+                    <div className="col-md-8 mb-3">
+                        <label htmlFor="senha" className="form-label">Senha</label>
+                        <input type="password" className="form-control border-dark" name="senha"
+                            id="senha" placeholder="Digite sua senha" minLength="8" required
+                            onChange={(event) => atualizaCampo("senha", event.target.value)} />
+                    </div>
+                </div>
+
+                <div className="row">
+                    <div className="d-grid col-md-6 mx-auto mb-3">
+                        <input className="btn btn-lg rounded-pill btn-custom" type="submit" />
+                    </div>
+                </div>
+
+            </form>
+        </div>
     );
 };
