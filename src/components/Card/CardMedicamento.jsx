@@ -25,7 +25,9 @@ export const CardMedicamento = ({ medicamento }) => {
                             <p>Nome do Laboratório: {medicamento.nomeLab}</p>
                             <p>Dosagem: {medicamento.dosagem}</p>
                             <p>Valor: R$ {medicamento.preco}</p>
-                            <p className={medicamento.tipo == "Medicamento Comum" ? "text-dark" : "text-danger"}>Tipo de medicamento: {medicamento.tipo}</p>
+                            <p className={medicamento.tipo == "Medicamento Comum" ? "text-dark" : "text-danger"}>
+                                Tipo de medicamento: {medicamento.tipo}
+                            </p>
                             <p>Descrição: {medicamento.descricao}</p>
                         </div>
 

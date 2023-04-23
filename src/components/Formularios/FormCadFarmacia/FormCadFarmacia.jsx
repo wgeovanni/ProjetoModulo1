@@ -12,17 +12,11 @@ export const FormCadFarmacia = () => {
     const [farmacia, setFarmacia] = useState({})
 
     useEffect(() => {
-    }, [endereco, farmacia]);
+    }, [endereco]);
 
     const atualizaCampo = (campo, valor) => {
         const novoDado = { ...farmacia, [campo]: valor }
-
         setFarmacia(novoDado);
-    }
-
-    //Insere dados da API ViaCep
-    const insereDados = (dados) => {
-        setEndereco(dados);
     }
 
     //Valida Cep e faz requisição
@@ -41,25 +35,21 @@ export const FormCadFarmacia = () => {
 
     const confereCep = (formCep) => {
         if (formCep != "" && formCep.length == 8) {
-
+            atualizaCampo("cep", formCep);
             fetch(`https://viacep.com.br/ws/${formCep}/json/`)
                 .then((response) => response.json())
-                .then((dados) => {
-                    setEndereco(dados);
-                    atualizaCampo("estado", dados.uf);
-                    atualizaCampo("endereco", dados.logradouro);
-                    atualizaCampo("cidade", dados.localidade);
-                    atualizaCampo("bairro", dados.bairro);
-                })
+                .then((dados) => setEndereco(dados))
                 .catch((error) => console.log(error));
 
-            atualizaCampo("cep", formCep);
+
 
         }
     }
 
     const validaForm = (e) => {
         e.preventDefault();
+        console.log(farmacia)
+        console.log(endereco)
         salva("farmacia", farmacia);
         alert("Farmácia Salva com sucesso");
         //setFarmacia("");
@@ -108,14 +98,14 @@ export const FormCadFarmacia = () => {
                 <label htmlFor="fone" className="form-label">Telefone</label>
                 <input type="tel" className="form-control border-dark" name="fone" id="fone"
                     placeholder="Digite o telefone" maxLength={10}
-                    onChange={(event) => atualizaCampo("fone", event.target.value)} />
+                    onChange={(event) => atualizaCampo("telefone", event.target.value)} />
             </div>
 
             <div className="col-lg-2 col-md-3 mb-3">
                 <label htmlFor="cel" className="form-label">Celular</label>
                 <input type="tel" className="form-control border-dark" name="cel" id="cel"
                     placeholder="Digite o Celular" maxLength={11} required
-                    onChange={(event) => atualizaCampo("cel", event.target.value)} />
+                    onChange={(event) => atualizaCampo("celular", event.target.value)} />
             </div>
 
             <div className="col-lg-2 col-md-3 mb-3">
@@ -130,8 +120,8 @@ export const FormCadFarmacia = () => {
             <div className="col-md-5 mb-3">
                 <label htmlFor="endereco" className="form-label">Logradouro/Endereço</label>
                 <input type="text" className="form-control border-dark" name="endereco" id="endereco"
-                    placeholder="Digite o endereço"
-                    defaultValue={endereco?.logradouro} required
+                    placeholder="Digite o endereço" defaultValue={endereco?.logradouro} required
+                    onChange={(event) => atualizaCampo("endereco", event.target.value)}
                 />
             </div>
 
@@ -145,8 +135,8 @@ export const FormCadFarmacia = () => {
             <div className="col-md-5 mb-3">
                 <label htmlFor="bairro" className="form-label">Bairro</label>
                 <input type="text" className="form-control border-dark" name="bairro" id="bairro"
-                    placeholder="Digite o nome do bairro"
-                    defaultValue={endereco?.bairro} required
+                    placeholder="Digite o nome do bairro" defaultValue={endereco?.bairro} required
+                    onChange={(event) => atualizaCampo("bairro", event.target.value)}
                 />
             </div>
 
@@ -160,16 +150,16 @@ export const FormCadFarmacia = () => {
             <div className="col-md-4 mb-3">
                 <label htmlFor="cidade" className="form-label">Cidade</label>
                 <input type="text" className="form-control border-dark" name="cidade" id="cidade"
-                    placeholder="Digite a cidade"
-                    defaultValue={endereco?.localidade} required
+                    placeholder="Digite a cidade" defaultValue={endereco?.localidade} required
+                    onChange={(event) => atualizaCampo("cidade", event.target.value)}
                 />
             </div>
 
             <div className="col-md-2 mb-3">
                 <label htmlFor="estado" className="form-label">Estado</label>
                 <input type="text" className="form-control border-dark" name="estado" id="estado"
-                    placeholder="Ex.: Sp"
-                    defaultValue={endereco?.uf} required
+                    placeholder="Ex.: Sp" defaultValue={endereco?.uf} required
+                    onChange={(event) => atualizaCampo("estado", event.target.value)}
                 />
             </div>
 

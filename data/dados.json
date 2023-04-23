@@ -47,11 +47,71 @@
       "estado": "SC",
       "complemento": "Próximo à estação de metrô",
       "id": 3
+    },
+    {
+      "razao": "abc",
+      "nome": "teste",
+      "cnpj": "1234567891234567",
+      "email": "abc@abc.com",
+      "telefone": "1234567891",
+      "celular": "12345678912",
+      "cep": "89208731",
+      "numero": "123",
+      "complemento": "asd",
+      "id": 4
+    },
+    {
+      "razao": "abc",
+      "nome": "abc",
+      "cnpj": "1234567891234567",
+      "email": "abc@abc.com",
+      "telefone": "1234567891",
+      "celular": "12345678912",
+      "cep": "89208731",
+      "numero": "231",
+      "complemento": "dasd",
+      "id": 5
+    },
+    {
+      "razao": "asd",
+      "nome": "abc",
+      "cnpj": "1234567891234567",
+      "email": "abc@abc.com",
+      "telefone": "1234567891",
+      "celular": "12345678912",
+      "cep": "89208731",
+      "numero": "4",
+      "complemento": "asd",
+      "id": 6
+    },
+    {
+      "razao": "asd",
+      "nome": "abc",
+      "cnpj": "1234567891234567",
+      "email": "abc@abc.com",
+      "telefone": "1234567891",
+      "celular": "89208731",
+      "cep": "89208731",
+      "numero": "13",
+      "complemento": "asd",
+      "id": 7
+    },
+    {
+      "razao": "asdasd",
+      "nome": "teste213",
+      "cnpj": "1234567891234567",
+      "email": "abc@abc.com",
+      "telefone": "1234567891",
+      "celular": "12345678912",
+      "cep": "89208731",
+      "numero": "312",
+      "complemento": "ads",
+      "id": 8
     }
   ],
   "medicamento": [
     {
-      "nomeMed": "remedio",
+      "nomeMed": "xarope",
       "nomeLab": "labInc",
       "dosagem": "10ml",
       "descricao": "remedio para gripe",
@@ -60,7 +120,7 @@
       "id": 1
     },
     {
-      "nomeMed": "remedio2",
+      "nomeMed": "aspirina",
       "nomeLab": "labInc2",
       "dosagem": "20ml",
       "descricao": "remedio para dor de cabeça",
@@ -69,7 +129,7 @@
       "id": 2
     },
     {
-      "nomeMed": "remedio3",
+      "nomeMed": "coristina d",
       "nomeLab": "labInc3",
       "dosagem": "30ml",
       "descricao": "remedio para febre",
@@ -78,76 +138,13 @@
       "id": 3
     },
     {
-      "nomeMed": "remedio3",
-      "nomeLab": "labInc3",
-      "dosagem": "30ml",
-      "descricao": "remedio para febre",
-      "preco": "R$ 20.00",
-      "tipo": "Medicamento Controlado",
+      "nomeMed": "qualquer",
+      "nomeLab": "asdasdasdasd",
+      "dosagem": "asdasd",
+      "preco": "123",
+      "tipo": "Medicamento Comum",
+      "descricao": "asdasdsadasddasd",
       "id": 4
-    },
-    {
-      "nomeMed": "remedio3",
-      "nomeLab": "labInc3",
-      "dosagem": "30ml",
-      "descricao": "remedio para febre",
-      "preco": "R$ 20.00",
-      "tipo": "Medicamento Controlado",
-      "id": 5
-    },
-    {
-      "nomeMed": "remedio3",
-      "nomeLab": "labInc3",
-      "dosagem": "30ml",
-      "descricao": "remedio para febre",
-      "preco": "R$ 20.00",
-      "tipo": "Medicamento Controlado",
-      "id": 6
-    },
-    {
-      "nomeMed": "remedio3",
-      "nomeLab": "labInc3",
-      "dosagem": "30ml",
-      "descricao": "remedio para febre",
-      "preco": "R$ 20.00",
-      "tipo": "Medicamento Controlado",
-      "id": 7
-    },
-    {
-      "nomeMed": "remedio3",
-      "nomeLab": "labInc3",
-      "dosagem": "30ml",
-      "descricao": "remedio para febre",
-      "preco": "R$ 20.00",
-      "tipo": "Medicamento Controlado",
-      "id": 8
-    },
-    {
-      "nomeMed": "remedio3",
-      "nomeLab": "labInc3",
-      "dosagem": "30ml",
-      "descricao": "remedio para febre",
-      "preco": "R$ 20.00",
-      "tipo": "Medicamento Controlado",
-      "id": 9
-    },
-    {
-      "nomeMed": "remedio3",
-      "nomeLab": "labInc3",
-      "dosagem": "30ml",
-      "descricao": "remedio para febre",
-      "preco": "R$ 20.00",
-      "tipo": "Medicamento Controlado",
-      "id": 10
-    },
-    {
-      "nomeMed": "remedio3 asdasdsadasdsd ads",
-      "nomeLab": "labInc3",
-      "dosagem": "30ml",
-      "descricao": "remedio para febre",
-      "preco": "R$ 20.00",
-      "tipo": "Medicamento Controlado",
-      "id": 11
     }
   ],
   "usuario": [
@@ -160,6 +157,91 @@
       "id": 2,
       "email": "admin@lab.com",
       "senha": "admin"
+    },
+    {
+      "email": "abc@abc.com",
+      "senha": "admin123456",
+      "id": 3
+    },
+    {
+      "email": "abc@abc.com",
+      "senha": "213456987r",
+      "id": 4
+    },
+    {
+      "email": "abc@abc.com",
+      "senha": "312456978w",
+      "id": 5
+    },
+    {
+      "email": "abc@abc.com",
+      "senha": "123465978l",
+      "id": 6
+    },
+    {
+      "email": "abc@abc.com",
+      "senha": "213456987a",
+      "id": 7
+    },
+    {
+      "email": "abc@abc.com",
+      "senha": "123456879o",
+      "id": 8
+    },
+    {
+      "email": "abc@abc.com",
+      "senha": "312546897p",
+      "id": 9
+    },
+    {
+      "email": "abc@abc.com",
+      "senha": "321465987fg",
+      "id": 10
+    },
+    {
+      "email": "abc@abc.com",
+      "senha": "123546897s",
+      "id": 11
+    },
+    {
+      "email": "abc@abc.com",
+      "senha": "213456897a",
+      "id": 12
+    },
+    {
+      "email": "abc@abc.com",
+      "senha": "123564789s",
+      "id": 13
+    },
+    {
+      "email": "abc@abc.com",
+      "senha": "312456897a",
+      "id": 14
+    },
+    {
+      "email": "abc@abc.com",
+      "senha": "123654879a",
+      "id": 15
+    },
+    {
+      "email": "abc@abc.com",
+      "senha": "231456897a",
+      "id": 16
+    },
+    {
+      "email": "abc@abc.com",
+      "senha": "12456897a",
+      "id": 17
+    },
+    {
+      "email": "abc@abc.com",
+      "senha": "123456897asd",
+      "id": 18
+    },
+    {
+      "email": "abc@abc.com",
+      "senha": "213456789a",
+      "id": 19
     }
   ]
 }

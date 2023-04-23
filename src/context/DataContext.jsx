@@ -11,14 +11,14 @@ export const DataProvider = ({ children }) => {
     const [farmacia, setFarmacia] = useState([]);
     const [medicamento, setMedicamento] = useState([]);
     const [varHidden, setVarHidden] = useState(true);
-
-    //Atualiza a cada mudança do estado loginUsuario
-    useEffect(() => { }, [loginUsuario]);
+    const [filtro, setFiltro] = useState("");
+    const [medFiltrado, setMedFiltrado] = useState();
 
     //Atualiza e busca os valores do arquivo json
     useEffect(() => {
-        buscaFarm("farmacia");
-        buscaMed("medicamento");
+        buscaFarm();
+        buscaMed();
+        filtrado();
     }, []);
 
     const atualizaCampo = (campo, valor) => {
@@ -26,17 +26,51 @@ export const DataProvider = ({ children }) => {
         setLoginUsuario(novoDado);
     }
 
+    const filtrar = (valor) => {
+        setFiltro(valor);
+    }
+
+    const filtrado = () => {
+        let listFiltrado = [];
+        listFiltrado = medicamento.filter((remedio) => {
+            if (filtro.length == 0) {
+                console.log("teste")
+                return medicamento;
+            } else {
+                if (remedio.nomeMed == valor) {
+                    console.log(remedio.nomeMed)
+                    return remedio;
+                }
+            }
+        });
+
+        setMedFiltrado(listFiltrado);
+        console.log(medFiltrado)
+    }
+
     //Efetua login do usuário
     const validaForm = () => {
 
-        console.log(loginUsuario)
-        //if (usuario.senha >= 8) {
-        if (/^[A-Za-z0-9]*$/.test(loginUsuario.senha)) {
-            localStorage.setItem("Usuário", JSON.stringify(loginUsuario));
-            setVarHidden(false);
-            navigate('/listafarmacia');
+        let letrasTest = /.*?[A-Za-z]/;
+        let numTest = /.*?[0-9]/;
+
+        //Verifica se possui letras
+        if (letrasTest.test(loginUsuario.senha)) {
+
+            //Verifica se possui números
+            if (numTest.test(loginUsuario.senha)) {
+
+                salva("usuario", loginUsuario)
+                setVarHidden(false);
+                navigate('/listafarmacia');
+
+            } else {
+                return alert("A senha deve conter ao menos 1 número");
+            }
+
+        } else {
+            return (alert("A senha deve conter ao menos uma letra"));
         }
-        //}
     }
 
     const buscaFarm = () => {
@@ -61,7 +95,9 @@ export const DataProvider = ({ children }) => {
             headers: {
                 "Content-Type": "application/json"
             }
-        })
+        }).catch((error) => console.log(error));
+        buscaFarm();
+        buscaMed();
     }
 
     //Faz requisição na API do IBGE
@@ -81,11 +117,15 @@ export const DataProvider = ({ children }) => {
             farmacia,
             medicamento,
             varHidden,
+            medFiltrado,
             salva,
             pesquisa,
             setVarHidden,
             validaForm,
-            atualizaCampo
+            atualizaCampo,
+            setFiltro,
+            filtrar,
+            filtrado
         }}>
             {children}
         </dataContext.Provider >
