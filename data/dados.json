@@ -47,66 +47,6 @@
       "estado": "SC",
       "complemento": "Próximo à estação de metrô",
       "id": 3
-    },
-    {
-      "razao": "abc",
-      "nome": "teste",
-      "cnpj": "1234567891234567",
-      "email": "abc@abc.com",
-      "telefone": "1234567891",
-      "celular": "12345678912",
-      "cep": "89208731",
-      "numero": "123",
-      "complemento": "asd",
-      "id": 4
-    },
-    {
-      "razao": "abc",
-      "nome": "abc",
-      "cnpj": "1234567891234567",
-      "email": "abc@abc.com",
-      "telefone": "1234567891",
-      "celular": "12345678912",
-      "cep": "89208731",
-      "numero": "231",
-      "complemento": "dasd",
-      "id": 5
-    },
-    {
-      "razao": "asd",
-      "nome": "abc",
-      "cnpj": "1234567891234567",
-      "email": "abc@abc.com",
-      "telefone": "1234567891",
-      "celular": "12345678912",
-      "cep": "89208731",
-      "numero": "4",
-      "complemento": "asd",
-      "id": 6
-    },
-    {
-      "razao": "asd",
-      "nome": "abc",
-      "cnpj": "1234567891234567",
-      "email": "abc@abc.com",
-      "telefone": "1234567891",
-      "celular": "89208731",
-      "cep": "89208731",
-      "numero": "13",
-      "complemento": "asd",
-      "id": 7
-    },
-    {
-      "razao": "asdasd",
-      "nome": "teste213",
-      "cnpj": "1234567891234567",
-      "email": "abc@abc.com",
-      "telefone": "1234567891",
-      "celular": "12345678912",
-      "cep": "89208731",
-      "numero": "312",
-      "complemento": "ads",
-      "id": 8
     }
   ],
   "medicamento": [
@@ -136,15 +76,6 @@
       "preco": "R$ 20.00",
       "tipo": "Medicamento Controlado",
       "id": 3
-    },
-    {
-      "nomeMed": "qualquer",
-      "nomeLab": "asdasdasdasd",
-      "dosagem": "asdasd",
-      "preco": "123",
-      "tipo": "Medicamento Comum",
-      "descricao": "asdasdsadasddasd",
-      "id": 4
     }
   ],
   "usuario": [
@@ -165,83 +96,53 @@
     },
     {
       "email": "abc@abc.com",
-      "senha": "213456987r",
+      "senha": "123456897a",
       "id": 4
     },
     {
       "email": "abc@abc.com",
-      "senha": "312456978w",
+      "senha": "123546897l",
       "id": 5
     },
     {
       "email": "abc@abc.com",
-      "senha": "123465978l",
+      "senha": "123546897p",
       "id": 6
     },
     {
       "email": "abc@abc.com",
-      "senha": "213456987a",
+      "senha": "123456789o",
       "id": 7
     },
     {
       "email": "abc@abc.com",
-      "senha": "123456879o",
+      "senha": "12354897a",
       "id": 8
     },
     {
       "email": "abc@abc.com",
-      "senha": "312546897p",
+      "senha": "213456987a",
       "id": 9
     },
     {
       "email": "abc@abc.com",
-      "senha": "321465987fg",
+      "senha": "312456978a",
       "id": 10
     },
     {
-      "email": "abc@abc.com",
-      "senha": "123546897s",
+      "email": "willyangeo@gmail.com",
+      "senha": "312456978i",
       "id": 11
     },
     {
       "email": "abc@abc.com",
-      "senha": "213456897a",
+      "senha": "123546897a",
       "id": 12
     },
     {
       "email": "abc@abc.com",
-      "senha": "123564789s",
+      "senha": "123456987a",
       "id": 13
-    },
-    {
-      "email": "abc@abc.com",
-      "senha": "312456897a",
-      "id": 14
-    },
-    {
-      "email": "abc@abc.com",
-      "senha": "123654879a",
-      "id": 15
-    },
-    {
-      "email": "abc@abc.com",
-      "senha": "231456897a",
-      "id": 16
-    },
-    {
-      "email": "abc@abc.com",
-      "senha": "12456897a",
-      "id": 17
-    },
-    {
-      "email": "abc@abc.com",
-      "senha": "123456897asd",
-      "id": 18
-    },
-    {
-      "email": "abc@abc.com",
-      "senha": "213456789a",
-      "id": 19
     }
   ]
 }

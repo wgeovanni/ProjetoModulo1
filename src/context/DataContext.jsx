@@ -21,6 +21,7 @@ export const DataProvider = ({ children }) => {
         filtrado();
     }, []);
 
+    //Salva novos dados do usuário logado
     const atualizaCampo = (campo, valor) => {
         const novoDado = { ...loginUsuario, [campo]: valor };
         setLoginUsuario(novoDado);
@@ -45,7 +46,7 @@ export const DataProvider = ({ children }) => {
         });
 
         setMedFiltrado(listFiltrado);
-        console.log(medFiltrado)
+
     }
 
     //Efetua login do usuário
@@ -87,8 +88,9 @@ export const DataProvider = ({ children }) => {
             .catch((error) => console.log(error));
     }
 
-    //Salva faramcia ou medicamento dependendo dos argumentos recebidos
+    //Salva farmacia ou medicamento dependendo dos argumentos recebidos
     const salva = (listabd, objeto) => {
+        console.log(objeto);
         fetch(`http://localhost:8080/${listabd}`, {
             method: "POST",
             body: JSON.stringify(objeto),
@@ -100,18 +102,6 @@ export const DataProvider = ({ children }) => {
         buscaMed();
     }
 
-    //Faz requisição na API do IBGE
-    const pesquisa = (cep) => {
-
-        let retDados = null;
-
-        fetch(`https://viacep.com.br/ws/${cep}/json/`)
-            .then((response) => response.json())
-            .then((dados) => console.log(dados))
-            .catch((error) => console.log(error));
-        return retDados;
-    }
-
     return (
         <dataContext.Provider value={{
             farmacia,
@@ -119,7 +109,6 @@ export const DataProvider = ({ children }) => {
             varHidden,
             medFiltrado,
             salva,
-            pesquisa,
             setVarHidden,
             validaForm,
             atualizaCampo,

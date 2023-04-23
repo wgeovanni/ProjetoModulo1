@@ -3,7 +3,7 @@ import { useData } from "../../../context/useData";
 
 export const FormCadFarmacia = () => {
 
-    const { salva, pesquisa } = useData();
+    const { salva } = useData();
 
     //Variável para recebimento dos dados da API
     const [endereco, setEndereco] = useState({});
@@ -12,44 +12,37 @@ export const FormCadFarmacia = () => {
     const [farmacia, setFarmacia] = useState({})
 
     useEffect(() => {
+        atualizaCampo("endereco", endereco.logradouro);
+        atualizaCampo("bairro", endereco.bairro);
+        atualizaCampo("cidade", endereco.localidade);
+        atualizaCampo("estado", endereco.uf);
     }, [endereco]);
 
+    //Salva dados da farmácia
     const atualizaCampo = (campo, valor) => {
-        const novoDado = { ...farmacia, [campo]: valor }
-        setFarmacia(novoDado);
+        setFarmacia(farmacia => ({ ...farmacia, [campo]: valor }));
     }
 
-    //Valida Cep e faz requisição
-    // const confereCep = (formCep) => {
-
-    //     if (formCep != "" && formCep.length == 8) {
-    //         const dados = pesquisa(formCep);
-    //         console.log(dados)
-    //         setEndereco(dados);
-    //         insereDados(dados);
-    //     } else {
-    //         setEndereco("");
-    //         // setFarmacia("");
-    //     }
-    // }
-
+    //Valida cep e faz requisição da api
     const confereCep = (formCep) => {
         if (formCep != "" && formCep.length == 8) {
             atualizaCampo("cep", formCep);
             fetch(`https://viacep.com.br/ws/${formCep}/json/`)
                 .then((response) => response.json())
-                .then((dados) => setEndereco(dados))
+                .then((dados) => setEndereco({
+                    logradouro: dados.logradouro,
+                    localidade: dados.localidade,
+                    uf: dados.uf,
+                    bairro: dados.bairro
+                }))
                 .catch((error) => console.log(error));
-
-
-
         }
     }
 
     const validaForm = (e) => {
         e.preventDefault();
-        console.log(farmacia)
-        console.log(endereco)
+        // console.log(farmacia.endereco)
+        // console.log(endereco)
         salva("farmacia", farmacia);
         alert("Farmácia Salva com sucesso");
         //setFarmacia("");
@@ -121,7 +114,7 @@ export const FormCadFarmacia = () => {
                 <label htmlFor="endereco" className="form-label">Logradouro/Endereço</label>
                 <input type="text" className="form-control border-dark" name="endereco" id="endereco"
                     placeholder="Digite o endereço" defaultValue={endereco?.logradouro} required
-                    onChange={(event) => atualizaCampo("endereco", event.target.value)}
+
                 />
             </div>
 
