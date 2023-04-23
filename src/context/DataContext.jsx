@@ -29,14 +29,28 @@ export const DataProvider = ({ children }) => {
     //Efetua login do usuário
     const validaForm = () => {
 
-        console.log(loginUsuario)
-        //if (usuario.senha >= 8) {
-        if (/^[A-Za-z0-9]*$/.test(loginUsuario.senha)) {
-            localStorage.setItem("Usuário", JSON.stringify(loginUsuario));
-            setVarHidden(false);
-            navigate('/listafarmacia');
+
+        let letrasTest = /^[a-zA-Z]+$/;
+        let numTest = /^[0-9]+$/;
+        console.log(letrasTest.test(loginUsuario.senha))
+
+        //Verifica se possui letras
+        if (letrasTest.test(loginUsuario.senha)) {
+
+            //Verifica se possui números
+            if (numTest.test(loginUsuario.senha)) {
+
+                localStorage.setItem("Usuário", JSON.stringify(loginUsuario));
+                setVarHidden(false);
+                navigate('/listafarmacia');
+
+            } else {
+                return alert("A senha deve conter ao menos 1 número");
+            }
+
+        } else {
+            return (alert("A senha deve conter ao menos uma letra"));
         }
-        //}
     }
 
     const buscaFarm = () => {
