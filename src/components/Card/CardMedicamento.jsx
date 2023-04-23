@@ -31,7 +31,7 @@ export const CardMedicamento = ({ medicamento }) => {
 
                         {/* Footer do Modal */}
                         <div className="modal-footer">
-                            <button type="button" className="btn btn-secondary text-center" data-bs-dismiss="modal">Fechar</button>
+                            <button type="button" className="btn btn-modal-custom text-center" data-bs-dismiss="modal">Fechar</button>
                         </div>
                     </div>
                 </div>
