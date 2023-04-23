@@ -1,4 +1,4 @@
-import { Farmacia } from "../Card/Farmacia";
+import { Farmacia } from "../Formularios/FormDetalheFarm/Farmacia";
 import { useData } from "../../context/useData";
 
 export const FarmaciaTable = () => {
