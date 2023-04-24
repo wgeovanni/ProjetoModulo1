@@ -19,6 +19,7 @@ export const DataProvider = ({ children }) => {
         buscaFarm();
         buscaMed();
         filtrado();
+        setVarHidden(false)
     }, []);
 
     //Salva novos dados do usuário logado

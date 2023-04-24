@@ -9,7 +9,10 @@ export const FormCadFarmacia = () => {
     const [endereco, setEndereco] = useState({});
 
     //Variável para cadastro da farmácia
-    const [farmacia, setFarmacia] = useState({})
+    const [farmacia, setFarmacia] = useState({
+        telefone: "",
+        complemento: ""
+    })
 
     useEffect(() => {
         atualizaCampo("endereco", endereco.logradouro);
@@ -90,7 +93,7 @@ export const FormCadFarmacia = () => {
             <div className="col-lg-2 col-md-3 mb-3">
                 <label htmlFor="fone" className="form-label">Telefone</label>
                 <input type="tel" className="form-control border-dark" name="fone" id="fone"
-                    placeholder="Digite o telefone" maxLength={10}
+                    placeholder="Digite o telefone" maxLength={10} defaultValue=""
                     onChange={(event) => atualizaCampo("telefone", event.target.value)} />
             </div>
 
@@ -136,7 +139,7 @@ export const FormCadFarmacia = () => {
             <div className="col-md-6 mb-3">
                 <label htmlFor="complemento" className="form-label">Complemento</label>
                 <input type="text" className="form-control border-dark" name="complemento" id="complemento"
-                    placeholder="Digite o complemento do endereço"
+                    placeholder="Digite o complemento do endereço" defaultValue=""
                     onChange={(event) => atualizaCampo("complemento", event.target.value)} />
             </div>
 

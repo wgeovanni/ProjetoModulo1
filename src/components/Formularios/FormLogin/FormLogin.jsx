@@ -18,10 +18,9 @@ export const FormLogin = () => {
         <div className="d-flex align-items-center justify-content-center m-2">
 
             <form className="form border border-dark border-3 rounded-4 
-        row  mt-3 bg-custom"
-                onSubmit={salva} >
+        row justify-content-md-center mt-3 bg-custom" onSubmit={salva} >
 
-                <legend className="text-center">Login</legend>
+                <legend className="text-center row justify-content-md-center">Login</legend>
 
                 <div className="row justify-content-md-center">
                     <div className="col-md-8 mb-3">
@@ -40,9 +39,9 @@ export const FormLogin = () => {
                     </div>
                 </div>
 
-                <div className="row">
+                <div className="row justify-content-md-center">
                     <div className="d-grid col-md-6 mx-auto mb-3">
-                        <input className="btn btn-lg rounded-pill btn-custom" type="submit" />
+                        <input className="btn btn-lg rounded-pill btn-custom" type="submit" value="Acessar" />
                     </div>
                 </div>
 
