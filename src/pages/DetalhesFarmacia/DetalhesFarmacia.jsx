@@ -1,14 +1,30 @@
+import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom'
 
 export const DetalhesFarmacia = () => {
 
     const navigate = useNavigate();
     const { state } = useLocation();
+    const [hideTelefone, setHideTelefone] = useState(false);
+    const [hideComplem, setHideComplem] = useState(false);
 
     //Retorna para a página anterior
     const voltar = () => {
         navigate('/listafarmacia')
     };
+
+    useEffect(() => {
+        if (state.dado.telefone == "") {
+            setHideTelefone(true);
+        }
+        console.log(state.dado.telefone == "")
+        console.log(state.dado.complemento == "")
+        console.log(state.dado.telefone)
+        console.log(state.dado.complemento)
+        if (state.dado.complemento == "") {
+            setHideComplem(true);
+        }
+    }, [hideTelefone, hideComplem])
 
     return (
         <form className="border border-dark border-3 rounded-4 row justify-content-md-center mt-3 bg-custom" >
@@ -38,7 +54,7 @@ export const DetalhesFarmacia = () => {
                     value={state.dado.email} readOnly />
             </div>
 
-            <div className="col-lg-2 col-md-3 mb-3">
+            <div className="col-lg-2 col-md-3 mb-3" id="tel" hidden={hideTelefone}>
                 <label htmlFor="fone" className="form-label">Telefone</label>
                 <input type="tel" className="form-control border-dark" name="fone" id="fone"
                     value={state.dado.telefone} readOnly />
@@ -75,7 +91,7 @@ export const DetalhesFarmacia = () => {
                     value={state.dado.bairro} readOnly />
             </div>
 
-            <div className="col-md-6 mb-3">
+            <div className="col-md-6 mb-3" id="complem" hidden={hideComplem}>
                 <label htmlFor="complemento" className="form-label">Complemento</label>
                 <input type="text" className="form-control border-dark" name="complemento" id="complemento"
                     value={state.dado.complemento} readOnly />

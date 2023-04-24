@@ -71,7 +71,6 @@ export const FormCadMedicamentos = () => {
                 <input type="text" className="form-control border-dark" name="dosagem" id="dosagem" required
                     placeholder="Digite a dosagem"
                     onChange={(event) => atualizaCampo("dosagem", event.target.value)} />
-
             </div>
 
             <div className="col-md-3 mb-3">
