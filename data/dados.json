@@ -47,54 +47,6 @@
       "estado": "SC",
       "complemento": "Próximo à estação de metrô",
       "id": 3
-    },
-    {
-      "telefone": "",
-      "complemento": "asd",
-      "endereco": "Passarela Ana Costa de Souza",
-      "bairro": "Petrópolis",
-      "cidade": "Joinville",
-      "estado": "SC",
-      "razao": "abc",
-      "nome": "abc",
-      "cnpj": "1234567891234567",
-      "email": "abc@abc.com",
-      "celular": "89208731",
-      "cep": "89208731",
-      "numero": "213",
-      "id": 4
-    },
-    {
-      "telefone": "1234567891",
-      "complemento": "",
-      "endereco": "Passarela Ana Costa de Souza",
-      "bairro": "Petrópolis",
-      "cidade": "Joinville",
-      "estado": "SC",
-      "razao": "abc",
-      "nome": "abc",
-      "cnpj": "1234567891234567",
-      "email": "abc@abc.com",
-      "celular": "89208731",
-      "cep": "89208731",
-      "numero": "213",
-      "id": 5
-    },
-    {
-      "telefone": "",
-      "complemento": "",
-      "endereco": "Passarela Ana Costa de Souza",
-      "bairro": "Petrópolis",
-      "cidade": "Joinville",
-      "estado": "SC",
-      "razao": "abc",
-      "nome": "abc",
-      "cnpj": "1234567891234567",
-      "email": "abc@abc.com",
-      "celular": "89208731",
-      "cep": "89208731",
-      "numero": "213",
-      "id": 6
     }
   ],
   "medicamento": [
@@ -141,6 +93,16 @@
       "email": "abc@abc.com",
       "senha": "admin123456",
       "id": 3
+    },
+    {
+      "email": "abc@abc.com",
+      "senha": "321456987l",
+      "id": 4
+    },
+    {
+      "email": "abc@abc.com",
+      "senha": "3124569786a",
+      "id": 5
     }
   ]
 }

@@ -23,7 +23,7 @@ export const DataProvider = ({ children }) => {
     }, []);
 
     //Salva novos dados do usuário logado
-    const atualizaCampo = (campo, valor) => {
+    const handleChangeLogin = (campo, valor) => {
         const novoDado = { ...loginUsuario, [campo]: valor };
         setLoginUsuario(novoDado);
     }
@@ -71,10 +71,11 @@ export const DataProvider = ({ children }) => {
             }
 
         } else {
-            return (alert("A senha deve conter ao menos uma letra"));
+            return alert("A senha deve conter ao menos uma letra");
         }
     }
 
+    //Salva dados de farmácias json em um state
     const buscaFarm = () => {
         fetch("http://localhost:8080/farmacia")
             .then((response) => response.json())
@@ -82,6 +83,7 @@ export const DataProvider = ({ children }) => {
             .catch((error) => console.log(error));
     }
 
+    //Salva dados de medicamentos do json em um state
     const buscaMed = () => {
         fetch("http://localhost:8080/medicamento")
             .then((response) => response.json())
@@ -91,7 +93,7 @@ export const DataProvider = ({ children }) => {
 
     //Salva farmacia ou medicamento dependendo dos argumentos recebidos
     const salva = (listabd, objeto) => {
-        console.log(objeto);
+
         fetch(`http://localhost:8080/${listabd}`, {
             method: "POST",
             body: JSON.stringify(objeto),
@@ -112,7 +114,7 @@ export const DataProvider = ({ children }) => {
             salva,
             setVarHidden,
             validaForm,
-            atualizaCampo,
+            handleChangeLogin,
             setFiltro,
             filtrar,
             filtrado

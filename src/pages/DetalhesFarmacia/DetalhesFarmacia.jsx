@@ -13,14 +13,12 @@ export const DetalhesFarmacia = () => {
         navigate('/listafarmacia')
     };
 
+    //Testa se os valores são vazios e caso forem, não mostra o campo no formulário
     useEffect(() => {
         if (state.dado.telefone == "") {
             setHideTelefone(true);
         }
-        console.log(state.dado.telefone == "")
-        console.log(state.dado.complemento == "")
-        console.log(state.dado.telefone)
-        console.log(state.dado.complemento)
+
         if (state.dado.complemento == "") {
             setHideComplem(true);
         }

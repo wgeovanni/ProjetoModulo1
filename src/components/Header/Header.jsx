@@ -4,13 +4,14 @@ import { useData } from '../../context/useData'
 export const Header = () => {
 
     const { varHidden, validaForm } = useData();
+
     return (
         <header>
             <div className="container-fluid" id="nav-container">
                 <nav className="navbar navbar-expand-md">
 
                     <Link to={'/'} className="navbar-brand">
-                        <img src="../../../src/assets/logo3.png" alt="Logo do sistema" />
+                        <img src="../../../src/assets/logo.png" alt="Logo do sistema" />
                     </Link>
 
                     <button className="navbar-toggler mb-2" type="button" data-bs-toggle="collapse"
@@ -59,6 +60,7 @@ export const Header = () => {
                                     <button className="btn btn-outline-primary" hidden={varHidden}>Logout</button>
                                 </Link>
                             </div>
+
                         </div>
                     </div>
                 </nav >

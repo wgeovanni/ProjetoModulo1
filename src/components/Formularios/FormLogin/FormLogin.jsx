@@ -1,43 +1,52 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useData } from "../../../context/useData";
 
 export const FormLogin = () => {
 
-    const { setVarHidden, validaForm, atualizaCampo } = useData();
+    const { setVarHidden, validaForm, handleChangeLogin } = useData();
 
     useEffect(() => {
         setVarHidden(true);
     }, [])
 
+    //Salva no arquivo json
     const salva = () => {
         event.preventDefault();
         validaForm();
     }
 
     return (
+        //Container do formulário
         <div className="d-flex align-items-center justify-content-center m-2">
 
-            <form className="form border border-dark border-3 rounded-4 
+            <form className="form border border-info border-2 rounded-4 
         row justify-content-md-center mt-3 bg-custom" onSubmit={salva} >
 
-                <legend className="text-center row justify-content-md-center">Login</legend>
+                <img src="../../../src/assets/logo-sistema.png" className="img-custom"
+                    alt="Pharmacy Central System" />
 
-                <div className="row justify-content-md-center">
-                    <div className="col-md-8 mb-3">
-                        <label htmlFor="email" className="form-label">E-mail</label>
+
+                <div className="input-group col-md-8 mb-3">
+                    <span className="input-group-text">teste</span>
+                    <div className="form-floating">
                         <input type="email" className="form-control border-dark" name="email"
                             id="email" placeholder="exemplo@email.com" autoFocus required
-                            onChange={(event) => atualizaCampo("email", event.target.value)} />
+                            onChange={(event) => handleChangeLogin("email", event.target.value)} />
+                        <label htmlFor="email">E-mail</label>
                     </div>
                 </div>
-                <div className="row justify-content-md-center">
-                    <div className="col-md-8 mb-3">
-                        <label htmlFor="senha" className="form-label">Senha</label>
+
+
+                <div className="input-group col-md-8 mb-3">
+                    <span className="input-group-text">teste</span>
+                    <div className="form-floating">
                         <input type="password" className="form-control border-dark" name="senha"
                             id="senha" placeholder="Digite sua senha" minLength="8" required
-                            onChange={(event) => atualizaCampo("senha", event.target.value)} />
+                            onChange={(event) => handleChangeLogin("senha", event.target.value)} />
+                        <label htmlFor="senha">Senha</label>
                     </div>
                 </div>
+
 
                 <div className="row justify-content-md-center">
                     <div className="d-grid col-md-6 mx-auto mb-3">

@@ -4,9 +4,12 @@ import { useData } from "../../context/useData";
 export const FarmaciaTable = () => {
 
     const { farmacia } = useData();
+
     return (
 
+        //Container da tabela
         <div className=" overflow-x-auto">
+
             <table className="table bg-info-subtle border-dark table-striped-columns 
         table-custom mt-4 text-center">
 
