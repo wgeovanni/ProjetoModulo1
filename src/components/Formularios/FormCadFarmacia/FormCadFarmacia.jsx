@@ -43,44 +43,43 @@ export const FormCadFarmacia = () => {
     }
 
     //Função chamada ao submeter o formulário
-    //Salva o objeto no servidor e mostra a mensagem
+    //Salva o objeto no servidor,  mostra a mensagem e reseta os campos do formulário
     const validaForm = (e) => {
         e.preventDefault();
 
         salva("farmacia", farmacia);
         alert("Farmácia Salva com sucesso");
-        //setFarmacia("");
-        //setEndereco("");
-        // farmacia = farmacia.map((farmacia) => {
 
-        // })
+        const form = document.querySelector("form");
+        form.reset();
+        setEndereco("");
     }
 
     return (
 
-        <form className="border border-dark border-3 rounded-4 
+        <form className="border border-info-subtle border-3 rounded-4 
         row justify-content-md-center mt-3 bg-custom" onSubmit={validaForm}>
 
             <legend className="text-center">Cadastro de Farmácia</legend>
 
-            <div className="col-md-5 mb-3">
+            <div className="col-md-6 mb-3">
                 <label htmlFor="razao" className="form-label">Razão Social</label>
                 <input type="text" className="form-control border-dark" name="razao" id="razao"
                     placeholder="Digite a razão social" required autoFocus
                     onChange={(event) => handleChange("razao", event.target.value)} />
             </div>
 
-            <div className="col-md-5 mb-3">
+            <div className="col-md-6 mb-3">
                 <label htmlFor="nome" className="form-label">Nome Fantasia</label>
                 <input type="text" className="form-control border-dark" name="nome" id="nome"
                     placeholder="Digite o Nome Fantasia" required
                     onChange={(event) => handleChange("nome", event.target.value)} />
             </div>
 
-            <div className="col-lg-2 col-md-3 mb-3">
+            <div className="col-lg-5 col-md-4 mb-3">
                 <label htmlFor="cnpj" className="form-label">CNPJ</label>
-                <input type="text" className="form-control border-dark" name="cnpj" id="cnpj"
-                    placeholder="Digite o CNPJ" maxLength={16} required
+                <input type="number" className="form-control border-dark" name="cnpj" id="cnpj"
+                    placeholder="Somente números" min={0} max={99999999999999} maxLength={16} required
                     onChange={(event) => handleChange("cnpj", event.target.value)} />
             </div>
 
@@ -91,24 +90,24 @@ export const FormCadFarmacia = () => {
                     onChange={(event) => handleChange("email", event.target.value)} />
             </div>
 
-            <div className="col-lg-2 col-md-3 mb-3">
+            <div className="col-lg-2 col-md-3 mb-2">
                 <label htmlFor="fone" className="form-label">Telefone</label>
                 <input type="tel" className="form-control border-dark" name="fone" id="fone"
                     placeholder="Digite o telefone" maxLength={10} defaultValue=""
                     onChange={(event) => handleChange("telefone", event.target.value)} />
             </div>
 
-            <div className="col-lg-2 col-md-3 mb-3">
+            <div className="col-lg-3 col-md-3 mb-3">
                 <label htmlFor="cel" className="form-label">Celular</label>
                 <input type="tel" className="form-control border-dark" name="cel" id="cel"
                     placeholder="Digite o Celular" maxLength={11} required
                     onChange={(event) => handleChange("celular", event.target.value)} />
             </div>
 
-            <div className="col-lg-2 col-md-3 mb-3">
+            <div className="col-lg-3 col-md-3 mb-3">
                 <label htmlFor="cep" className="form-label">CEP</label>
                 <input type="number" className="form-control border-dark" name="cep" id="cep"
-                    placeholder="Digite o CEP" max={99999999} required
+                    placeholder="Digite o CEP" min={0} max={99999999} required
                     onChange={(event) => { confereCep(event.target.value) }} />
             </div>
 
@@ -125,7 +124,7 @@ export const FormCadFarmacia = () => {
             <div className="col-md-2 mb-3">
                 <label htmlFor="numero" className="form-label">Número</label>
                 <input type="number" className="form-control border-dark" name="numero" id="numero" required
-                    placeholder="Ex.: 123"
+                    placeholder="Ex.: 123" min={0}
                     onChange={(event) => handleChange("numero", event.target.value)} />
             </div>
 

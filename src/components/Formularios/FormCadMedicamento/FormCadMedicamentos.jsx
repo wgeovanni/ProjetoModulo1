@@ -7,7 +7,9 @@ export const FormCadMedicamentos = () => {
     const { salva } = useData();
 
     //Objeto medicamento
-    const [medicamento, setMedicamento] = useState("");
+    const [medicamento, setMedicamento] = useState({
+        descricao: ""
+    });
 
     //Captura os dados
     const handleChange = (campo, valor) => {
@@ -28,16 +30,10 @@ export const FormCadMedicamentos = () => {
         form.reset();
     }
 
-    const valida = () => {
-
-
-        cadastraMed();
-    }
-
     return (
 
-        <form className="border border-dark border-3 rounded-4 
-        row justify-content-md-center mt-3 bg-custom" onSubmit={valida} >
+        <form className="border border-info-subtle border-3 rounded-4 
+        row justify-content-md-center mt-3 bg-custom" onSubmit={cadastraMed} >
 
             <legend className="text-center">Cadastro de Medicamento</legend>
             <div className="col-md-6 mb-3">
@@ -66,7 +62,7 @@ export const FormCadMedicamentos = () => {
                 <div className="input-group border border-dark">
                     <span className="input-group-text">R$</span>
                     <input type="number" step="0.01" className="form-control" name="preco" id="preco" required
-                        placeholder="Ex.: 10,99"
+                        placeholder="Ex.: 10,99" min={0}
                         onChange={(event) => handleChange("preco", event.target.value)} />
                 </div>
             </div>

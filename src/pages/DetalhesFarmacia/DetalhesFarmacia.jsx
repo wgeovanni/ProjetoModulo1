@@ -3,8 +3,13 @@ import { useLocation, useNavigate } from 'react-router-dom'
 
 export const DetalhesFarmacia = () => {
 
+    //Variável para navegação de página
     const navigate = useNavigate();
+
+    //Variável que recebe objeto passado através de elemento Link
     const { state } = useLocation();
+
+    //Variáveis que alteram a visibilidade de campos vazios
     const [hideTelefone, setHideTelefone] = useState(false);
     const [hideComplem, setHideComplem] = useState(false);
 
@@ -25,7 +30,7 @@ export const DetalhesFarmacia = () => {
     }, [hideTelefone, hideComplem])
 
     return (
-        <form className="border border-dark border-3 rounded-4 row justify-content-md-center mt-3 bg-custom" >
+        <form className="border border-info-subtle border-3 rounded-4 row justify-content-md-center mt-3 bg-custom" >
             <legend className="text-center">Detalhes da Farmácia</legend>
 
             <div className="col-md-5 mb-3">
@@ -42,7 +47,7 @@ export const DetalhesFarmacia = () => {
 
             <div className="col-lg-2 col-md-3 mb-3">
                 <label htmlFor="cnpj" className="form-label">CNPJ</label>
-                <input type="text" className="form-control border-dark" name="cnpj" id="cnpj"
+                <input type="number" className="form-control border-dark" name="cnpj" id="cnpj"
                     value={state.dado.cnpj} readOnly />
             </div>
 

@@ -1,20 +1,21 @@
 import { CardMedicamento } from '../Card/CardMedicamento'
 import { useData } from '../../context/useData';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+
 
 export const MedicamentoGrid = () => {
 
+    //Array de medicamentos acessado do contexto através de customHook
     const { medicamento } = useData();
 
+    //Variável que recebe o valor digitado pelo usuário
     const [filtro, setFiltro] = useState("");
-    // const [medFiltrado, setMedFiltrado] = useState(medicamento);
 
-    // useEffect(() => {
-    //     setMedFiltrado(medicamento.filter(med => med.nomeMed.includes(filtro)));
-    // }, [filtro])
-
+    //Transforma as letras digitadas para minúsculas
     let filtroLower = filtro.toLowerCase();
 
+    //Verifica se filtro está vazio, se não estiver compara com o nome
+    //do medicamento e devolve este medicamento
     const medFiltrado = filtroLower.length > 0 ?
         medicamento.filter((med) => med.nomeMed.toLowerCase().includes(filtroLower)) :
         medicamento

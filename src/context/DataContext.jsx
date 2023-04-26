@@ -10,13 +10,13 @@ export const DataProvider = ({ children }) => {
     const [loginUsuario, setLoginUsuario] = useState("");
     const [farmacia, setFarmacia] = useState([]);
     const [medicamento, setMedicamento] = useState([]);
-    const [varHidden, setVarHidden] = useState(true);
+    const [varHidden, setVarHidden] = useState(false);
 
     //Atualiza e busca os valores do arquivo json
     useEffect(() => {
         buscaFarm();
         buscaMed();
-        setVarHidden(false)
+        setVarHidden(true)
     }, []);
 
     //Salva novos dados do usuário logado

@@ -3,7 +3,8 @@ import { useData } from '../../context/useData'
 
 export const Header = () => {
 
-    const { varHidden, validaForm } = useData();
+    //Variável usada para setar a visibilidade do elemento através de customHook
+    const { varHidden } = useData();
 
     return (
         <header className="p-2">
@@ -16,14 +17,14 @@ export const Header = () => {
 
                 <button className="navbar-toggler btn-custom mb-2" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbar-links" aria-controls="navbar-links" aria-expanded="false"
-                    aria-label="Toggle navigation">
+                    aria-label="Toggle navigation" hidden={varHidden}>
                     <span className="navbar-toggler-icon"></span>
                 </button>
 
                 <div className="collapse navbar-collapse justify-content-end" id="navbar-links">
                     <div className="navbar-nav">
                         <div className="dropdown-center">
-                            <button className="btn btn-custom-listas me-2 mb-2 dropdown-toggle"
+                            <button className="btn btn-custom me-2 mb-2 dropdown-toggle"
                                 type="button" data-bs-toggle="dropdown" hidden={varHidden}>Cadastro</button>
                             <ul className="dropdown-menu mb-2 text-center">
                                 <li>
@@ -37,7 +38,7 @@ export const Header = () => {
                         </div>
 
                         <div className="dropdown-center">
-                            <button className="btn btn-custom-listas me-5 mb-2 nav-button dropdown-toggle"
+                            <button className="btn btn-custom me-5 mb-2 nav-button dropdown-toggle"
                                 type="button" data-bs-toggle="dropdown" hidden={varHidden}>Listas</button>
                             <ul className="dropdown-menu mb-2 text-center">
                                 <li>
@@ -50,20 +51,41 @@ export const Header = () => {
                             </ul>
                         </div>
 
-                        <div className="nav-item dropdown-center">
-                            <button className="btn btn-custom nav-item mb-2" hidden={!varHidden}
-                                onClick={validaForm}>Login</button>
-                        </div>
+                        <div className="dropdown-center">
 
-                        <div className="nav-item dropdown-center">
-                            <Link to='/' className="nav-item mb-2">
-                                <button className="btn btn-outline-primary" hidden={varHidden}>Logout</button>
-                            </Link>
+                            <button className="btn btn-custom-logout"
+                                data-bs-toggle="modal" data-bs-target="#modalLogout"
+                                hidden={varHidden}>Logout</button>
+
                         </div>
 
                     </div>
                 </div>
             </nav >
+
+            {/* Modal de Logout */}
+            <div className="modal fade text-center"
+                id="modalLogout" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div className="modal-dialog modal-dialog-centered">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h2 className="modal-title">Logout</h2>
+                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div className="modal-body">
+                            <p>Deseja efetuar o Logout?</p>
+                        </div>
+                        <div className="modal-footer">
+                            <div className="row mx-auto">
+                                <Link to='/' className="col-auto">
+                                    <button type="button" className="btn btn-modal-logout" data-bs-dismiss="modal">Logout</button>
+                                </Link>
+                                <button type="button" className="btn btn-custom ml 3 col-auto" data-bs-dismiss="modal">Voltar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </header >
     );
