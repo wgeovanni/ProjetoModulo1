@@ -11,14 +11,11 @@ export const DataProvider = ({ children }) => {
     const [farmacia, setFarmacia] = useState([]);
     const [medicamento, setMedicamento] = useState([]);
     const [varHidden, setVarHidden] = useState(true);
-    const [filtro, setFiltro] = useState("");
-    const [medFiltrado, setMedFiltrado] = useState();
 
     //Atualiza e busca os valores do arquivo json
     useEffect(() => {
         buscaFarm();
         buscaMed();
-        filtrado();
         setVarHidden(false)
     }, []);
 
@@ -26,28 +23,6 @@ export const DataProvider = ({ children }) => {
     const handleChangeLogin = (campo, valor) => {
         const novoDado = { ...loginUsuario, [campo]: valor };
         setLoginUsuario(novoDado);
-    }
-
-    const filtrar = (valor) => {
-        setFiltro(valor);
-    }
-
-    const filtrado = () => {
-        let listFiltrado = [];
-        listFiltrado = medicamento.filter((remedio) => {
-            if (filtro.length == 0) {
-                console.log("teste")
-                return medicamento;
-            } else {
-                if (remedio.nomeMed == valor) {
-                    console.log(remedio.nomeMed)
-                    return remedio;
-                }
-            }
-        });
-
-        setMedFiltrado(listFiltrado);
-
     }
 
     //Efetua login do usuário
@@ -110,14 +85,10 @@ export const DataProvider = ({ children }) => {
             farmacia,
             medicamento,
             varHidden,
-            medFiltrado,
             salva,
             setVarHidden,
             validaForm,
             handleChangeLogin,
-            setFiltro,
-            filtrar,
-            filtrado
         }}>
             {children}
         </dataContext.Provider >
