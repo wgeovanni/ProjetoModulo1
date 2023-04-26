@@ -2,10 +2,10 @@
   "farmacia": [
     {
       "razao": "Farmácia Lab Ltda.",
-      "cnpj": "01234567890123",
+      "cnpj": "12345678912344",
       "nome": "FarmaLab",
       "email": "contato@farmalab.com",
-      "telefone": 1234567890,
+      "telefone": 1234567891,
       "celular": 12345678912,
       "cep": 90620260,
       "endereco": "Rua Machado de Assis",
@@ -21,8 +21,8 @@
       "cnpj": "12345678901234",
       "nome": "FarmaLab Sul",
       "email": "contato@farmalabsul.com",
-      "telefone": 5143525768,
-      "celular": 51998765432,
+      "telefone": 9876543219,
+      "celular": 98765432198,
       "cep": 90610285,
       "endereco": "Avenida Ipiranga",
       "numero": 1234,
@@ -37,7 +37,7 @@
       "cnpj": "98765432109876",
       "nome": "FarmaLab Norte",
       "email": "contato@farmalabnorte.com",
-      "telefone": 1143525768,
+      "telefone": 1212345678,
       "celular": 11987654321,
       "cep": 89201017,
       "endereco": "Rua Amandus May",
@@ -47,66 +47,6 @@
       "estado": "SC",
       "complemento": "Próximo à estação de metrô",
       "id": 3
-    },
-    {
-      "razao": "abc",
-      "nome": "teste",
-      "cnpj": "1234567891234567",
-      "email": "abc@abc.com",
-      "telefone": "1234567891",
-      "celular": "12345678912",
-      "cep": "89208731",
-      "numero": "123",
-      "complemento": "asd",
-      "id": 4
-    },
-    {
-      "razao": "abc",
-      "nome": "abc",
-      "cnpj": "1234567891234567",
-      "email": "abc@abc.com",
-      "telefone": "1234567891",
-      "celular": "12345678912",
-      "cep": "89208731",
-      "numero": "231",
-      "complemento": "dasd",
-      "id": 5
-    },
-    {
-      "razao": "asd",
-      "nome": "abc",
-      "cnpj": "1234567891234567",
-      "email": "abc@abc.com",
-      "telefone": "1234567891",
-      "celular": "12345678912",
-      "cep": "89208731",
-      "numero": "4",
-      "complemento": "asd",
-      "id": 6
-    },
-    {
-      "razao": "asd",
-      "nome": "abc",
-      "cnpj": "1234567891234567",
-      "email": "abc@abc.com",
-      "telefone": "1234567891",
-      "celular": "89208731",
-      "cep": "89208731",
-      "numero": "13",
-      "complemento": "asd",
-      "id": 7
-    },
-    {
-      "razao": "asdasd",
-      "nome": "teste213",
-      "cnpj": "1234567891234567",
-      "email": "abc@abc.com",
-      "telefone": "1234567891",
-      "celular": "12345678912",
-      "cep": "89208731",
-      "numero": "312",
-      "complemento": "ads",
-      "id": 8
     }
   ],
   "medicamento": [
@@ -116,7 +56,7 @@
       "dosagem": "10ml",
       "descricao": "remedio para gripe",
       "preco": "R$ 10.00",
-      "tipo": "Medicamento Controlado",
+      "tipo": "Medicamento Comum",
       "id": 1
     },
     {
@@ -136,15 +76,6 @@
       "preco": "R$ 20.00",
       "tipo": "Medicamento Controlado",
       "id": 3
-    },
-    {
-      "nomeMed": "qualquer",
-      "nomeLab": "asdasdasdasd",
-      "dosagem": "asdasd",
-      "preco": "123",
-      "tipo": "Medicamento Comum",
-      "descricao": "asdasdsadasddasd",
-      "id": 4
     }
   ],
   "usuario": [
@@ -160,88 +91,13 @@
     },
     {
       "email": "abc@abc.com",
-      "senha": "admin123456",
+      "senha": "132456789a",
       "id": 3
     },
     {
       "email": "abc@abc.com",
-      "senha": "213456987r",
+      "senha": "123456897a",
       "id": 4
-    },
-    {
-      "email": "abc@abc.com",
-      "senha": "312456978w",
-      "id": 5
-    },
-    {
-      "email": "abc@abc.com",
-      "senha": "123465978l",
-      "id": 6
-    },
-    {
-      "email": "abc@abc.com",
-      "senha": "213456987a",
-      "id": 7
-    },
-    {
-      "email": "abc@abc.com",
-      "senha": "123456879o",
-      "id": 8
-    },
-    {
-      "email": "abc@abc.com",
-      "senha": "312546897p",
-      "id": 9
-    },
-    {
-      "email": "abc@abc.com",
-      "senha": "321465987fg",
-      "id": 10
-    },
-    {
-      "email": "abc@abc.com",
-      "senha": "123546897s",
-      "id": 11
-    },
-    {
-      "email": "abc@abc.com",
-      "senha": "213456897a",
-      "id": 12
-    },
-    {
-      "email": "abc@abc.com",
-      "senha": "123564789s",
-      "id": 13
-    },
-    {
-      "email": "abc@abc.com",
-      "senha": "312456897a",
-      "id": 14
-    },
-    {
-      "email": "abc@abc.com",
-      "senha": "123654879a",
-      "id": 15
-    },
-    {
-      "email": "abc@abc.com",
-      "senha": "231456897a",
-      "id": 16
-    },
-    {
-      "email": "abc@abc.com",
-      "senha": "12456897a",
-      "id": 17
-    },
-    {
-      "email": "abc@abc.com",
-      "senha": "123456897asd",
-      "id": 18
-    },
-    {
-      "email": "abc@abc.com",
-      "senha": "213456789a",
-      "id": 19
     }
   ]
 }

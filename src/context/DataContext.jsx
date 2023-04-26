@@ -10,42 +10,19 @@ export const DataProvider = ({ children }) => {
     const [loginUsuario, setLoginUsuario] = useState("");
     const [farmacia, setFarmacia] = useState([]);
     const [medicamento, setMedicamento] = useState([]);
-    const [varHidden, setVarHidden] = useState(true);
-    const [filtro, setFiltro] = useState("");
-    const [medFiltrado, setMedFiltrado] = useState();
+    const [varHidden, setVarHidden] = useState(false);
 
     //Atualiza e busca os valores do arquivo json
     useEffect(() => {
         buscaFarm();
         buscaMed();
-        filtrado();
+        setVarHidden(true)
     }, []);
 
-    const atualizaCampo = (campo, valor) => {
+    //Salva novos dados do usuário logado
+    const handleChangeLogin = (campo, valor) => {
         const novoDado = { ...loginUsuario, [campo]: valor };
         setLoginUsuario(novoDado);
-    }
-
-    const filtrar = (valor) => {
-        setFiltro(valor);
-    }
-
-    const filtrado = () => {
-        let listFiltrado = [];
-        listFiltrado = medicamento.filter((remedio) => {
-            if (filtro.length == 0) {
-                console.log("teste")
-                return medicamento;
-            } else {
-                if (remedio.nomeMed == valor) {
-                    console.log(remedio.nomeMed)
-                    return remedio;
-                }
-            }
-        });
-
-        setMedFiltrado(listFiltrado);
-        console.log(medFiltrado)
     }
 
     //Efetua login do usuário
@@ -69,10 +46,11 @@ export const DataProvider = ({ children }) => {
             }
 
         } else {
-            return (alert("A senha deve conter ao menos uma letra"));
+            return alert("A senha deve conter ao menos uma letra");
         }
     }
 
+    //Salva dados de farmácias json em um state
     const buscaFarm = () => {
         fetch("http://localhost:8080/farmacia")
             .then((response) => response.json())
@@ -80,6 +58,7 @@ export const DataProvider = ({ children }) => {
             .catch((error) => console.log(error));
     }
 
+    //Salva dados de medicamentos do json em um state
     const buscaMed = () => {
         fetch("http://localhost:8080/medicamento")
             .then((response) => response.json())
@@ -87,8 +66,9 @@ export const DataProvider = ({ children }) => {
             .catch((error) => console.log(error));
     }
 
-    //Salva faramcia ou medicamento dependendo dos argumentos recebidos
+    //Salva farmacia ou medicamento dependendo dos argumentos recebidos
     const salva = (listabd, objeto) => {
+
         fetch(`http://localhost:8080/${listabd}`, {
             method: "POST",
             body: JSON.stringify(objeto),
@@ -100,32 +80,15 @@ export const DataProvider = ({ children }) => {
         buscaMed();
     }
 
-    //Faz requisição na API do IBGE
-    const pesquisa = (cep) => {
-
-        let retDados = null;
-
-        fetch(`https://viacep.com.br/ws/${cep}/json/`)
-            .then((response) => response.json())
-            .then((dados) => console.log(dados))
-            .catch((error) => console.log(error));
-        return retDados;
-    }
-
     return (
         <dataContext.Provider value={{
             farmacia,
             medicamento,
             varHidden,
-            medFiltrado,
             salva,
-            pesquisa,
             setVarHidden,
             validaForm,
-            atualizaCampo,
-            setFiltro,
-            filtrar,
-            filtrado
+            handleChangeLogin,
         }}>
             {children}
         </dataContext.Provider >

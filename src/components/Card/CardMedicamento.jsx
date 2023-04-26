@@ -1,4 +1,16 @@
+import { useEffect, useState } from "react";
+
 export const CardMedicamento = ({ medicamento }) => {
+
+    //Variável que altera a visibilidade de campo vazio
+    const [hideDescricao, setHideDescricao] = useState(false);
+
+    //Ao carregar a página verifica se o campo está vazio para não mostrar
+    useEffect(() => {
+        if (medicamento.descricao == "") {
+            setHideDescricao(true);
+        }
+    }, [hideDescricao])
 
     return (
         <div className="card text-center">
@@ -28,7 +40,7 @@ export const CardMedicamento = ({ medicamento }) => {
                             <p className={medicamento.tipo == "Medicamento Comum" ? "text-dark" : "text-danger"}>
                                 Tipo de medicamento: {medicamento.tipo}
                             </p>
-                            <p>Descrição: {medicamento.descricao}</p>
+                            <p hidden={hideDescricao}>Descrição: {medicamento.descricao}</p>
                         </div>
 
                         {/* Footer do Modal */}

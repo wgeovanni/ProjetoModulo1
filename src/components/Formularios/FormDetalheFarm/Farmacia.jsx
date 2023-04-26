@@ -4,10 +4,14 @@ export const Farmacia = ({ farmacia }) => {
 
     const navigate = useNavigate();
 
+    //Envia objeto farmácia para a página detalhes
     const detalha = () => {
         navigate('/detalhes', { state: { dado: farmacia } });
     }
+
     return (
+
+        //Linha da tabela com as informações gerais da farmácia selecionada
         <tr className="align-middle">
             <td>{farmacia.nome}</td>
             <td>{farmacia.cnpj}</td>

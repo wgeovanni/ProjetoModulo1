@@ -3,11 +3,15 @@ import { useData } from "../../context/useData";
 
 export const FarmaciaTable = () => {
 
+    //Array de farmácias do contexto usando customHook
     const { farmacia } = useData();
+
     return (
 
+        //Container da tabela
         <div className=" overflow-x-auto">
-            <table className="table bg-info-subtle border-dark table-striped-columns 
+
+            <table className="table bg-info-subtle border-dark table-striped
         table-custom mt-4 text-center">
 
                 {/* Cabeçalho da tabela */}

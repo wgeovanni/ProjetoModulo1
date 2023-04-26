@@ -3,66 +3,90 @@ import { useData } from '../../context/useData'
 
 export const Header = () => {
 
-    const { varHidden, validaForm } = useData();
+    //Variável usada para setar a visibilidade do elemento através de customHook
+    const { varHidden } = useData();
+
     return (
-        <header>
-            <div className="container-fluid" id="nav-container">
-                <nav className="navbar navbar-expand-md">
+        <header className="p-2">
 
-                    <Link to={'/'} className="navbar-brand">
-                        <img src="../../../src/assets/logo.png" alt="Logo do sistema" />
-                    </Link>
+            <nav className="navbar navbar-expand-md">
 
-                    <button className="navbar-toggler mb-2" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbar-links" aria-controls="navbar-links" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
+                <Link to={'/'} className="navbar-brand">
+                    <img src="../../../src/assets/logo.png" alt="Logo do sistema" />
+                </Link>
 
-                    <div className="collapse navbar-collapse justify-content-end" id="navbar-links">
-                        <div className="navbar-nav">
-                            <div className="dropdown-center">
-                                <button className="btn btn-custom-listas me-2 mb-2 dropdown-toggle"
-                                    type="button" data-bs-toggle="dropdown" hidden={varHidden}>Cadastro</button>
-                                <ul className="dropdown-menu mb-2 text-center">
-                                    <li>
-                                        <Link to='/cadastrofarmacia' className="dropdown-item">Farmácias</Link>
-                                    </li>
-                                    <hr className="dropdown-divider" />
-                                    <li>
-                                        <Link to='/cadastromedicamento' className="dropdown-item">Medicamentos</Link>
-                                    </li>
-                                </ul>
-                            </div>
+                <button className="navbar-toggler btn-custom mb-2" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbar-links" aria-controls="navbar-links" aria-expanded="false"
+                    aria-label="Toggle navigation" hidden={varHidden}>
+                    <span className="navbar-toggler-icon"></span>
+                </button>
 
-                            <div className="dropdown-center">
-                                <button className="btn btn-custom-listas me-5 mb-2 nav-button dropdown-toggle"
-                                    type="button" data-bs-toggle="dropdown" hidden={varHidden}>Listas</button>
-                                <ul className="dropdown-menu mb-2 text-center">
-                                    <li>
-                                        <Link to='/listafarmacia' className="dropdown-item">Lista de Farmácias</Link>
-                                    </li>
-                                    <hr className="dropdown-divider" />
-                                    <li>
-                                        <Link to='/listamedicamento' className="dropdown-item">Lista de Medicamentos</Link>
-                                    </li>
-                                </ul>
-                            </div>
+                <div className="collapse navbar-collapse justify-content-end" id="navbar-links">
+                    <div className="navbar-nav">
+                        <div className="dropdown-center">
+                            <button className="btn btn-custom me-2 mb-2 dropdown-toggle"
+                                type="button" data-bs-toggle="dropdown" hidden={varHidden}>Cadastro</button>
+                            <ul className="dropdown-menu mb-2 text-center">
+                                <li>
+                                    <Link to='/cadastrofarmacia' className="dropdown-item">Farmácias</Link>
+                                </li>
+                                <hr className="dropdown-divider" />
+                                <li>
+                                    <Link to='/cadastromedicamento' className="dropdown-item">Medicamentos</Link>
+                                </li>
+                            </ul>
+                        </div>
 
-                            <div className="nav-item dropdown-center">
-                                <button className="btn btn-outline-primary nav-item mb-2" hidden={!varHidden}
-                                    onClick={validaForm}>Login</button>
-                            </div>
+                        <div className="dropdown-center">
+                            <button className="btn btn-custom me-5 mb-2 nav-button dropdown-toggle"
+                                type="button" data-bs-toggle="dropdown" hidden={varHidden}>Listas</button>
+                            <ul className="dropdown-menu mb-2 text-center">
+                                <li>
+                                    <Link to='/listafarmacia' className="dropdown-item">Lista de Farmácias</Link>
+                                </li>
+                                <hr className="dropdown-divider" />
+                                <li>
+                                    <Link to='/listamedicamento' className="dropdown-item">Lista de Medicamentos</Link>
+                                </li>
+                            </ul>
+                        </div>
 
-                            <div className="nav-item dropdown-center">
-                                <Link to='/' className="nav-item mb-2">
-                                    <button className="btn btn-outline-primary" hidden={varHidden}>Logout</button>
+                        <div className="dropdown-center">
+
+                            <button className="btn btn-custom-logout"
+                                data-bs-toggle="modal" data-bs-target="#modalLogout"
+                                hidden={varHidden}>Logout</button>
+
+                        </div>
+
+                    </div>
+                </div>
+            </nav >
+
+            {/* Modal de Logout */}
+            <div className="modal fade text-center"
+                id="modalLogout" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div className="modal-dialog modal-dialog-centered">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h2 className="modal-title">Logout</h2>
+                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div className="modal-body">
+                            <p>Deseja efetuar o Logout?</p>
+                        </div>
+                        <div className="modal-footer">
+                            <div className="row mx-auto">
+                                <Link to='/' className="col-auto">
+                                    <button type="button" className="btn btn-modal-logout" data-bs-dismiss="modal">Logout</button>
                                 </Link>
+                                <button type="button" className="btn btn-custom ml 3 col-auto" data-bs-dismiss="modal">Voltar</button>
                             </div>
                         </div>
                     </div>
-                </nav >
+                </div>
             </div>
+
         </header >
     );
 };
