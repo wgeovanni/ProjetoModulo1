@@ -52,6 +52,9 @@ $ npm install json-server
 <p>- <a href="https://code.visualstudio.com/">Visual Studio Code</a></p>
 <p>- <a href="https://getbootstrap.com/">Bootstrap V5.3</a>
 
+## Licença
+<p>MIT License</p>
+ 
 ## Autor
 
 <p>Willyan Geovanni Gutierres Gonçalves</p>
