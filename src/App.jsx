@@ -1,7 +1,7 @@
 import { Header } from "./components/Header/Header"
 import { Outlet } from "react-router-dom"
 import { Footer } from "./components/Footer/Footer"
-import { DataProvider } from "./context/dataContext.jsx"
+import { DataProvider } from "./context/DataContext.jsx"
 import "./app.css"
 
 export const App = () => {

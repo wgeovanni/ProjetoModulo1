@@ -47,6 +47,38 @@
       "estado": "SC",
       "complemento": "Próximo à estação de metrô",
       "id": 3
+    },
+    {
+      "telefone": "312",
+      "complemento": "",
+      "endereco": "Rua dos Bancários",
+      "bairro": "Petrópolis",
+      "cidade": "Joinville",
+      "estado": "SC",
+      "razao": "teste",
+      "nome": "teste",
+      "cnpj": "1123",
+      "email": "teste@teste",
+      "celular": "213",
+      "cep": "89208730",
+      "numero": "123",
+      "id": 4
+    },
+    {
+      "telefone": "",
+      "complemento": "",
+      "endereco": "Passarela Ana Costa de Souza",
+      "bairro": "Petrópolis",
+      "cidade": "Joinville",
+      "estado": "SC",
+      "razao": "teste",
+      "nome": "teste",
+      "cnpj": "213456897541",
+      "email": "teste@teste",
+      "celular": "213564879",
+      "cep": "89208731",
+      "numero": "231",
+      "id": 5
     }
   ],
   "medicamento": [
@@ -98,6 +130,16 @@
       "email": "abc@abc.com",
       "senha": "123456897a",
       "id": 4
+    },
+    {
+      "email": "willyangeo@gmail.com",
+      "senha": "123456978a",
+      "id": 5
+    },
+    {
+      "email": "teste@teste",
+      "senha": "312456897a",
+      "id": 6
     }
   ]
 }
