@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://wgeovanni.github.io/ProjetoModulo2",
+  "homepage": "https://wgeovanni.github.io/ProjetoModulo1",
   "scripts": {
     "server": "json-server --port 8080 --no-cors --watch data/dados.json",
     "dev": "vite",
