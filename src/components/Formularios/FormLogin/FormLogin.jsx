@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useData } from "../../../context/useData";
+import logoSistemaImage from "../../../assets/logo-sistema.png"
 
 export const FormLogin = () => {
 
@@ -22,7 +23,7 @@ export const FormLogin = () => {
         <form className="form col-md-8 col-sm-12 mx-auto border border-info-subtle border-3 rounded-4 width-50
         bg-custom" onSubmit={salva} >
 
-            <img src="../../../src/assets/logo-sistema.png" className="img-custom w-75" alt="Pharmacy Central System" />
+            <img src={logoSistemaImage} className="img-custom w-75" alt="Pharmacy Central System" />
 
             <div className="col-md-10 mb-1 p-2 mx-auto">
                 <div className="input-group mx-auto">

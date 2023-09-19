@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useData } from '../../context/useData'
+import logoImage from '../../assets/logo.png'
 
 export const Header = () => {
 
@@ -12,7 +13,7 @@ export const Header = () => {
             <nav className="navbar navbar-expand-md">
 
                 <Link to={'/'} className="navbar-brand">
-                    <img src="../../../src/assets/logo.png" alt="Logo do sistema" />
+                    <img src={logoImage} alt="Logo do sistema" />
                 </Link>
 
                 <button className="navbar-toggler btn-custom mb-2" type="button" data-bs-toggle="collapse"

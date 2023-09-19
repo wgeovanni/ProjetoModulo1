@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import medicamentoImage from "../../assets/medicamento.png"
 
 export const CardMedicamento = ({ medicamento }) => {
 
@@ -17,7 +18,7 @@ export const CardMedicamento = ({ medicamento }) => {
 
             {/* Imagem do Card */}
             <div>
-                <img className="card-img-top w-75" src="../../../src/assets/medicamento.png" alt="Caixa de remédio"
+                <img className="card-img-top w-75" src={medicamentoImage} alt="Caixa de remédio"
                     title="Caixa de remédio" data-bs-toggle="modal" data-bs-target={`#${medicamento.id}`} />
             </div>
 
